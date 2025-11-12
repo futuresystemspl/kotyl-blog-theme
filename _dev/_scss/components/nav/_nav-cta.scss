@@ -1,0 +1,25 @@
+@use "../../utilities/variables";
+
+.nav-cta {
+    display: flex;
+    align-items: center;
+    
+    gap: 1rem;
+
+    @media (min-width: variables.$breakpoint_mobile + 1px) {
+        justify-content: center;
+    }
+    @media (max-width: variables.$breakpoint_mobile) {
+        display: grid;
+        gap: 0.5rem;
+    }
+
+    .cta__video {
+        display: inline-flex;
+        align-items: center;
+
+        .ui-ico {
+            height: 1.5em;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+@use "../utilities/variables";
+
+.banner {
+    position: relative;
+    display: grid;
+    align-items: center;
+    background: variables.$black;
+    min-height: 60rem;
+    
+    .banner__body {
+        position: relative;
+        z-index: 10;
+    }
+    .banner__content {
+        h1 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        p {
+            font-size: 1.25em;
+            font-weight: 500;
+            max-width: 60rem;
+            margin: 0 auto;
+        }
+    }
+
+
+
+    @media (max-width: variables.$breakpoint_mobile) {
+        min-height: 35rem;
+        .banner__content {
+            padding: 1rem;
+        }
+    }    
+
+}
+

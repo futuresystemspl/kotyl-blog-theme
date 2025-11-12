@@ -1,0 +1,256 @@
+@use "../../utilities/variables";
+@use "../../utilities/mixins";
+
+//markup components/nav/nav-top-menu.tpl
+.nav--top-menu {
+    .nav__ui {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.75rem;
+        z-index: 10;
+        padding: 0;
+        font-size: unset;
+    }
+
+    .nav__logo {
+        text-align: center;
+        padding: 0;
+        margin-bottom: 1rem;
+
+        @media (max-width: variables.$breakpoint_phone-big) {
+            img {
+                height: 2.5rem;
+            }
+        }
+
+        svg {
+            
+        }
+    }
+
+    @media (min-width: variables.$breakpoint_mobile + 1px) {
+        .menu__list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            > li {
+                display: block;
+
+                > a {
+                    display: block;
+                    color: #fff;
+                    font-size: 0.875em;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                }
+
+                &.menu--open {
+                    > a {
+                        text-decoration: underline;
+                    }
+                    > .item__submenu {
+                        display: block;
+                    }
+                    &.item--has-submenu {
+                        > a {
+                            &::after {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+                &.item--mobile {
+                    display: none;
+                }
+            }
+            @media (max-width: variables.$breakpoint_hd) {
+                gap: 0.5rem;
+            }
+        }
+
+        .menu__item {
+            &.item--has-submenu {
+                > a {
+                    display: flex;
+                    align-items: center;
+                    &::after {
+                        margin-left: 0.375rem;
+                        @include mixins.dropdown-indicator(0.25rem, #aaa);
+                    }
+                }
+            }
+        }
+
+        //nav-shop-menu container
+        .item__submenu {
+            display: none;
+
+            position: absolute;
+            width: 100%;
+            top: 100%;
+            left: 0;
+            z-index: 999;
+            background: #fff;
+            padding: 2rem 0;
+            box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.25);
+            border-top: 1px solid #e7e7e7;
+
+            .viewport {
+                padding: 0 1rem;
+            }
+        }
+
+        .submenu__categories {
+            > li {
+                margin-bottom: 1rem;
+
+                > a {
+                }
+            }
+        }
+
+        .submenu__title {
+            display: none;
+        }
+        .submenu__list {
+            li {
+                margin-bottom: 1rem;
+            }
+            a {
+                font-size: 1.125em;
+                font-weight: 400;
+            }
+        }
+
+        .nav__logo,
+        .nav__search,
+        .nav__ui,
+        .item--back {
+            display: none;
+        }
+    }
+
+    @media (max-width: variables.$breakpoint_mobile) {
+        background: #fff;
+        position: fixed;
+        z-index: 999;
+        width: 80%;
+        height: 100vh;
+        overflow-y: visible;
+
+        top: 0;
+        transition: transform 0.3s;
+        padding: 0;
+
+        //extra space for nav__ui
+        padding-top: 2.5rem;
+
+        a {
+            display: block;
+            font-size: 1.125em;
+            font-weight: 400;
+            padding: 1rem 0;
+        }
+
+        > .menu {
+            height: 100%;
+            //overflow: auto;
+        }
+
+        ul {
+            li {
+                &:not(:last-child):not(.item--last) {
+                    border-bottom: 1px solid #d2d2d2;
+                }
+            }
+        }
+
+        .item--has-submenu {
+            > a {
+                display: flex;
+                align-items: center;
+                &::after {
+                    margin-left: 0.5rem;
+                    @include mixins.dropdown-indicator(0.25rem, #aaa);
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+
+        .item--desktop {
+            display: none;
+        }
+
+        .menu__list {
+            padding: 0 1rem 1rem;
+            height: calc(100% - 3rem - 4rem); //for scroll to occur correctly we need to adjust each nav element that is out of menu__list (logo, search)
+            overflow: auto;
+            z-index: 1;
+        }
+        .item__submenu,
+        .submenu__list {
+            display: block;
+            position: fixed;
+            z-index: 10;
+            top: 2.5rem;
+            left: 0;
+            width: 80%;
+            height: 100%;
+            overflow: auto;
+            transition: transform 0.3s;
+            padding: 0 1rem 3.5rem; //offset for top
+            background: #fff;
+        }
+
+        .item__submenu {
+            z-index: 2;
+        }
+        .submenu__title {
+            h3 {
+                font-size: 2em;
+                margin-bottom: 0.5rem;
+            }
+            a {
+                font-size: 0.875em;
+                font-weight: 400;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                margin-bottom: 1rem;
+
+                .ui-ico {
+                    height: 1rem;
+                }
+            }
+        }
+        .submenu__list {
+            z-index: 3;
+        }
+
+        &.menu--open {
+            box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5);
+        }
+        &:not(.menu--open) {
+            transform: translateX(-100%);
+        }
+
+        ul {
+            > li {
+                &:not(.menu--open) {
+                    > .item__submenu,
+                    > .submenu__list {
+                        transform: translateX(-100%);
+                    }
+                }
+            }
+        }
+
+        .block-socialmedia {
+            justify-content: center;
+            .svg__ico {
+
+            }
+        }
+    }
+}

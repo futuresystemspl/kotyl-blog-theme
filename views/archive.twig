@@ -1,0 +1,10 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+    <h1>archive.twig</h1>
+    <ul>
+        {% for post in posts %}
+            <li>{{post.title}}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,43 @@
+	{# Twig webp filter doesn't work  on images not in "wp-content/uploads" (image is generated alright, however path is assumed to be in upload_dir otherwise the src will be outputted wrongly, see vendor/timber/lib/ImageHelper.php) so we are providing paths manually; Using "../../" solves path issue but prevents webp from being generated #}
+
+<picture>
+
+    {% if theme_image %}
+
+        {% if src_mobile is defined and src_mobile != false %}
+
+            <source media="(min-width: 961px)" srcset="{{ src|replace({'png' : 'webp', 'jpg' : 'webp'}) }}" type="image/webp">
+            <source media="(min-width: 961px)" srcset="{{ src }}" type="image/jpeg">
+
+            <source media="(max-width: 960px)" srcset="{{ src_mobile|replace({'png' : 'webp', 'jpg' : 'webp'}) }}" type="image/webp">
+            <source media="(max-width: 960px)" srcset="{{ src_mobile }}" type="image/jpeg">
+
+        {% else %}
+
+            <source srcset="{{ src|replace({'png' : 'webp', 'jpg' : 'webp'}) }}" type="image/webp">
+            <source srcset="{{ src }}" type="image/jpeg">
+
+        {% endif %}
+
+    {% else %}
+
+        {% if src_mobile is defined and src_mobile != false %}
+
+            <source media="(min-width: 961px)" srcset="{{ src|towebp }}" type="image/webp">
+            <source media="(min-width: 961px)" srcset="{{ src }}" type="image/jpeg">
+
+            <source media="(max-width: 960px)" srcset="{{ src_mobile|towebp }}" type="image/webp">
+            <source media="(max-width: 960px)" srcset="{{ src_mobile }}" type="image/jpeg">
+
+        {% else %}
+
+            <source srcset="{{ src|towebp }}" type="image/webp">
+            <source srcset="{{ src }}" type="image/jpeg">
+
+        {% endif %}
+
+    {% endif %}
+
+    <img loading="lazy" alt="{{ alt }}" src="{{ src }}" width="{{ width }}" height="{{ height }}"/>
+
+</picture>

@@ -1,0 +1,39 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+
+    test<br>
+    {{ dump( post.meta('content_flexible') )}}
+
+    <div class="content__body content--page{% if has_banner %} content--has-banner{% endif %} content--no-margin">
+
+        {% if has_banner %}
+
+            {% include "components/banner/default.twig" with { 
+                'banner' : post.meta('banner'),
+                'banner_layout' : 'center',
+            } %}
+            {% include "components/breadcrumbs.twig" %}
+
+        {% else %}
+
+            {% include "components/breadcrumbs.twig" %}
+
+            <section class="content__title text--center">
+                <div class="viewport">
+                    <h1>{{ post.title }}</h1>
+                </div>
+            </section>
+
+        {% endif %}
+
+        <article class="content__main" role="main">
+            {% include 'layout/content.twig' with { 'content' : post.meta('content_flexible') } %}
+        </article><!-- /content__body -->
+
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,75 @@
+@use "../utilities/variables";
+
+//default style of generic html elements
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    color: variables.$text_silver;
+    overflow-x: hidden;
+}
+
+
+a {
+    color: variables.$black;
+    text-decoration: none;
+
+    @media (hover: hover) {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+ul {
+    list-style-type: none
+}
+
+
+img {
+    width: 100%;
+    height: auto; //takes care of inline width/height attributes
+    vertical-align: bottom;
+}
+
+
+address {
+    font-style: normal;
+}
+
+button {
+    cursor: pointer;
+    background: transparent;
+}
+
+figcaption {
+    margin-top: .5rem;
+    font-style: italic;
+    color: silver;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+        color: variables.$text_silver_light;
+        font-size: .875em;
+        font-weight: 400;        
+        text-align: left;
+    }
+
+    tr {
+        
+        &:nth-child(even) {
+            background: variables.$silver;
+        }
+    }
+
+    td {
+        font-weight: 400;
+        padding: .5rem;
+    }
+
+}

@@ -1,0 +1,71 @@
+<section class="banner{% if post_type %} banner--{{post_type}}{% endif %}{%if cssClass %} {{cssClass}}{% endif %}">
+    
+    {% block banner_body %}
+    <div class="banner__body text--white text--center">
+        <div class="viewport">
+
+            {% block banner_content %}
+            <div class="banner__content">
+                
+                {% if banner.banner_title %}
+                    <h1>{{ banner.banner_title }}</h1>
+                {% else %}
+                    <h1>{{ post.title }}</h1>
+                {% endif %}
+
+                {% if banner.banner_lead %}
+                    <p>{{ banner.banner_lead }}</p>
+                {% endif %}
+
+                {% block banner_cta %}
+                    {% include "components/nav/nav-cta.twig" %}                
+                {% endblock %}
+
+            </div>
+            {% endblock %}
+        </div>
+    </div>
+    {% endblock %}
+    
+    {% block banner_cover %}
+    <figure class="banner__cover cover cover--overlay">
+  
+        {% if banner.banner_video %}
+
+            <video width="{{banner.banner_video.width}}" height="{{banner.banner_video.height}}" src="{{banner.banner_video.url}}" playsinline autoplay loop muted preload="none"></video>   
+
+        {% endif %}
+
+        {% if banner.banner_cover.banner_desktop %}
+
+            {% 
+                include "components/picture.twig" with {
+                    'src_mobile' : banner.banner_cover.cover_mobile ? banner.banner_cover.banner_mobile.url : false ,
+                    'src' : banner.banner_cover.banner_desktop.url,
+                    'alt' : banner.banner_cover.banner_desktop.alt
+                }
+            %}
+
+        {% else %}
+
+            {# {% 
+                include "components/picture.twig" with {
+                    'src' : theme.path ~ '/assets/img/banner/default.jpg',
+                    'theme_image' : true
+                }
+            %} #}
+            <video 
+                class="video" 
+                data-src-mobile="{{ theme.path }}/assets/video/masaz-tajski-bielsko-biala.mp4"
+                data-src-desktop="{{ theme.path }}/assets/video/masaz-tajski-bielsko-biala.mp4"				
+                playsinline="" 
+                autoplay=""
+                loop=""
+                muted=""
+                preload="none">
+            </video>
+        {% endif %}
+
+    </figure>
+    {% endblock %}
+</section>

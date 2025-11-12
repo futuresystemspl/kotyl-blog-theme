@@ -1,0 +1,26 @@
+<ul class="block-social{% if class %} {{ class }}{% endif %}">
+    <li>
+        <a href="" title="">
+            <figure class="ui-ico ico--facebook">
+                {{ source('assets/svg/ico/facebook.svg', ignore_missing = true) }}
+            </figure>   
+            <span class="label">{{ __('Facebook.', 'theme') }}</span>
+        </a>
+    </li>
+    <li>
+        <a href="" title="">
+            <figure class="ui-ico ico--facebook">
+                {{ source('assets/svg/ico/twitter.svg', ignore_missing = true) }}
+            </figure>   
+            <span class="label">{{ __('Twitter.', 'theme') }}</span>
+        </a>
+    </li>    
+    <li>
+        <a href="" title="">
+            <figure class="ui-ico ico--youtube">
+                {{ source('assets/svg/ico/youtube.svg', ignore_missing = true) }}
+            </figure>   
+            <span class="label">{{ __('YouTube.', 'theme') }}</span>
+        </a>
+    </li>				
+</ul>

@@ -1,0 +1,45 @@
+@use "../utilities/variables";
+
+.ui-tabs {
+    .tabs__nav {
+
+        .nav__item {
+
+            &.tab--active {
+                font-weight: bold;
+            }
+
+        }
+    
+    }
+
+
+    .tabs__list {
+        .item--tab {
+            &:not(.tab--active) {
+                display: none;
+            }
+            .tab__title {
+                display: none;
+            }
+        }
+    }   
+
+    .item--tab {
+        &.tab--active {
+            .title__ui {
+                .ui--open {
+                    display: none;
+                }
+            }
+        }
+        &:not(.tab--active) {
+            .title__ui {
+                .ui--close {
+                    display: none;
+                }
+            }            
+        }        
+    }
+
+}

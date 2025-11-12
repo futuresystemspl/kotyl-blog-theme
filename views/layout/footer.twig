@@ -1,0 +1,24 @@
+<footer>
+
+    <section class="footer__section section--branding">
+
+        {% include "blocks/block-social.twig" with { 'class' : 'block--footer' } %}
+
+        {% include 'components/nav.twig' with { 'nav' : footer_nav, 'class' : 'footer__nav nav--footer' } %}
+
+    </section>
+
+    <section class="footer__section section--credits">
+    
+        <p class="footer__copyrights">2022 &copy; {{ __('Wszystkie prawa zastrzeżone')}}</p>
+        <p class="footer__disclaimer">{{ __('Właścicielem zdjęć produktów jest futuresystems.pl. Wykorzystanie i powielanie materiałów znajdujących się na stronach futuresystems.pl jest zabronione. Strona korzysta z informacji przechowywanych w plikach cookies w celach funkcjonalnych oraz statystycznych.')}}</p>
+
+        <p class="footer__credits">
+            {{ __('Projekt i realizacja')}}:
+            <a href="//futuresystems.pl" title="{{ __('Sklepy i strony internetowe Gliwice')}}">{{ __('agencja reklamowa')}}</a> 
+            <a href="//futuresystems.pl" title="{{ __('Projektowanie i wdrażanie systemów e-commerce')}}">futuresystems.pl</a>
+        </p>
+
+    </section>
+
+</footer>

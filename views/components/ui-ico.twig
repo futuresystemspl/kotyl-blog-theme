@@ -1,0 +1,11 @@
+{% if ico is defined %}
+
+	{% if embed is defined and embed == true %}
+		<figure class="ui-ico ico--{{ ico }}">
+			{{ source('assets/svg/ico/'~ ico ~ '.svg') }}
+		</figure>
+	{% else %}
+		<img loading="lazy" class="ui-ico ico--{{ ico }}" src="{{ theme.path }}/assets/svg/ico/{{ ico }}.svg" width="16" height="16" alt="{{ alt }}"/>
+	{% endif %}
+
+{% endif %}
