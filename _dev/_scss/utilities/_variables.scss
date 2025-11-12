@@ -1,21 +1,18 @@
-// default variables 
+// default variables
 
 //theme global variables related to layout
 $sticky_offset: 1rem; //offset for sticky elements (ui-filters on category and meta "buy block" on product)
 
-
-
 //paths to assets - keep in mind that CSS will be inlined, so absolute paths are required. For some reason I couldn't get to work relative path with meta base href tag.
 $assetsPath: "//";
-$fontsPath: "//";
-
+$fontsPath: "//kotyl.blog.dev.test/wp-content/themes/kotyl/assets/fonts/";
 
 //colors
 $black: #272727;
-$silver: #F0F0F0;
+$silver: #f0f0f0;
 
-$text_silver: #535050;
-$text_silver_light: #C8C8C8;
+$text_silver: #777f85;
+$text_silver_light: #c8c8c8;
 
 $viewport_width: 1650px;
 $viewport_padding: 1rem;

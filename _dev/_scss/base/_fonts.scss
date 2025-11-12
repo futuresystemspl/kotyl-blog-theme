@@ -1,0 +1,30 @@
+@use "../utilities/variables";
+
+@font-face {
+    font-family: "AG";
+    src: url("#{variables.$fontsPath}/AtlasGrotesk-Light.woff") format("woff"), url("#{variables.$fontsPath}/AtlasGrotesk-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    ascent-override: 90%;
+}
+@font-face {
+    font-family: "AG";
+    src: url("#{variables.$fontsPath}/AtlasGrotesk-Regular.woff") format("woff"), url("#{variables.$fontsPath}/AtlasGrotesk-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    ascent-override: 90%;
+}
+@font-face {
+    font-family: "AG";
+    src: url("#{variables.$fontsPath}/AtlasGrotesk-Medium.woff") format("woff"), url("#{variables.$fontsPath}/AtlasGrotesk-Medium.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    ascent-override: 90%;
+}
+
+@font-face {
+    font-family: "SL";
+    src: url("#{variables.$fontsPath}/SchnyderL-Demi.woff") format("woff"), url("#{variables.$fontsPath}/SchnyderL-Demi.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}

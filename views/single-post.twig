@@ -1,0 +1,20 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+	<main class="main__content content--post">
+
+		{% include 'partials/post/post-header.twig' %}
+
+		{# <pre>{{ dump() }}</pre> #}
+
+		<article role="main">
+			{% include 'layout/content.twig' with { 'content' : post.meta('content') } %}
+		</article>
+		<!-- /content__body -->
+
+	</main>
+
+	<aside class="side__content"></aside>
+
+{% endblock %}

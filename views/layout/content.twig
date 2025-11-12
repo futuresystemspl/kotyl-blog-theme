@@ -11,31 +11,8 @@
 
 #}
 
-
-{# Option 1: ACF Cookbook #}
-
 {% for section in content %}
-
-	{# 
-	
-	You can include twig template directly or use custom function theme_render_flexible_content that handles separating PHP logic from Twig templates for Flexible Fields. The PHP files have higher priority, but are optional, i.e. for Flexible Field called "gallery", it will look for following files in theme dir:
-
-	1) (optional) template-parts/flexible-content/gallery.php, where you can add custom logic, queries and keep them separate from template
-	2) (required) views/partials/flexible-content/gallery.twig - standard template
-
-	#}
-
-	{# 
-	
-	{% include 'partials/flexible-content/' ~ section.acf_fc_layout|replace({'_': '-'}) ~ '.twig' %} 
-	
-	#}
 
 	{{ theme_render_flexible_content( section ) }}
 
 {% endfor %}
-
-
-{# Option 2: With ACF Extended (in order to use Dynamic Preview) #}
-
-{{ fn('the_flexible', 'content_flexible') }}

@@ -3,13 +3,12 @@
 //default style of generic html elements
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: "AG", sans-serif;
     font-size: 1em;
     font-weight: 300;
     color: variables.$text_silver;
     overflow-x: hidden;
 }
-
 
 a {
     color: variables.$black;
@@ -23,16 +22,14 @@ a {
 }
 
 ul {
-    list-style-type: none
+    list-style-type: none;
 }
-
 
 img {
     width: 100%;
     height: auto; //takes care of inline width/height attributes
     vertical-align: bottom;
 }
-
 
 address {
     font-style: normal;
@@ -44,7 +41,7 @@ button {
 }
 
 figcaption {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     font-style: italic;
     color: silver;
 }
@@ -55,13 +52,12 @@ table {
 
     th {
         color: variables.$text_silver_light;
-        font-size: .875em;
-        font-weight: 400;        
+        font-size: 0.875em;
+        font-weight: 400;
         text-align: left;
     }
 
     tr {
-        
         &:nth-child(even) {
             background: variables.$silver;
         }
@@ -69,7 +65,6 @@ table {
 
     td {
         font-weight: 400;
-        padding: .5rem;
+        padding: 0.5rem;
     }
-
 }

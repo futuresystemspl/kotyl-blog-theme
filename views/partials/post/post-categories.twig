@@ -1,0 +1,9 @@
+<div class="post__categories">
+    <ul class="categories__list">
+        {% for category in categories %}
+            <li class="list__item item--category">
+                <a href={{ category.link }}>{{ category.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

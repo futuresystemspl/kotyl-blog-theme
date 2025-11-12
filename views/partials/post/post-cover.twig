@@ -1,14 +1,12 @@
-<figure class="{{ class ? class : 'post__cover' }}">
-    <picture>
+<figure>
+	<picture>
 
-        <source media="(min-width: 961px)" srcset="{{ post.thumbnail.src('cover')|towebp }}" type="image/webp">
-        <source media="(min-width: 961px)" srcset="{{ post.thumbnail.src('cover') }}" type="image/jpeg">
+		<source media="(min-width: 961px)" srcset="{{ post.thumbnail.src('large')|towebp }}" type="image/webp">
+		<source media="(min-width: 961px)" srcset="{{ post.thumbnail.src('large') }}" type="image/jpeg">
 
-        <source media="(max-width: 960px)" srcset="{{ post.thumbnail.src('thumbnail')|towebp }}" type="image/webp">
-        <source media="(max-width: 960px)" srcset="{{ post.thumbnail.src('thumbnail') }}" type="image/jpeg">  
+		<source media="(max-width: 960px)" srcset="{{ post.thumbnail.src('medium')|towebp }}" type="image/webp">
+		<source media="(max-width: 960px)" srcset="{{ post.thumbnail.src('medium') }}" type="image/jpeg">
 
-        <img loading="lazy" src="{{ post.thumbnail.src('cover') }}" width="1280" height="1280" alt="{{ post.thumbnail.alt }}"/>
-    </picture>
-
-    <figcaption class="image__credits">{{ post.thumbnail.caption }}</figcaption>
+		<img {% if lazy == true %} loading="lazy" {% endif %} src="{{ post.thumbnail.src('cover') }}" width="1280" height="1280" alt="{{ post.thumbnail.alt }}"/>
+	</picture>
 </figure>

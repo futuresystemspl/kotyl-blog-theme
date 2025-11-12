@@ -2,18 +2,29 @@
 
 {% block body %}
 
-	<h1>hello from twig</h1>
+	<section class="content__section section-headline text--center">
+		<div class="viewport viewport--article">
+			<h1>{{ __('Blog o butach. Odkryj najnowsze trendy i bądź na bieżąco z naszymi nowościami!', 'theme') }}</h1>
+		</div>
+	</section>
+
+	<section class="content__section section-newest-posts">
+		<div class="viewport viewport--laptop">
+
+			<ul class="posts__grid grid--big">
+				{% for post in posts %}
+
+					{% include 'partials/post/item.twig' with { 'class' : 'grid__item item--post'} %}
+
+				{% endfor %}
+			</ul>
+
+		</div>
+		<!-- /viewport -->
+	</section>
 
 
-	<div class="shop-category" data-category-id="12"></div>
+	{# <div class="shop-category" data-category-id="12"></div> #}
 
-
-	{% for product in new_products.products %}
-
-		<li>
-			<a href="{{product.link}}">{{product.name}}</a>
-		</li>
-
-	{% endfor %}
 
 {% endblock %}

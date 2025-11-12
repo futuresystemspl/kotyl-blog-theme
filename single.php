@@ -1,8 +1,15 @@
-<?php 
+<?php
 
-/** 
- * let's make all Post Types redirect to home page by default unless specifc controller in template hierarchy exists - we don't want google bots to index empty pages
- * https://developer.wordpress.org/themes/basics/template-hierarchy/
- * 
-*/
-wp_redirect( home_url() );
+use Timber\Timber;
+
+$context = Timber::context();
+//$context['post'] =  Timber::get_post();
+
+Timber::render(
+    array(
+        'single-' . $post->ID . '.twig',
+        'single-' . $post->post_type . '.twig',
+        'single.twig'
+    ),
+    $context
+);

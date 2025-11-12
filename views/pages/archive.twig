@@ -1,0 +1,50 @@
+{# template for Archive page - for posts there is no dedicated archive controller (like for CPT, i.e. archive-{CPT}.php) so we are creating one manually #}
+
+{% extends "layout/base.twig" %}
+
+
+{% block body %}
+
+	<main class="main__content content--archive">
+
+		{% include "components/breadcrumbs.twig" %}
+
+		<section class="content__section section-title">
+			<div class="viewport">
+				<div class="content__title text--center">
+					<h1>{{ __('Archiwum artykułów', 'theme') }}</h1>
+				</div>
+			</div>
+		</section>
+
+		{% include 'content/section-tags.twig' %}
+
+		<section class="content__section section--no-margin section-posts">
+			<div class="viewport">
+
+				<ul class="posts__grid grid--archive">
+					{% for post in posts %}
+						{% include 'partials/post/item.twig' with { 'class' : 'grid__item item--post'} %}
+					{% endfor %}
+
+					{# embed extra content to post grid #}
+					{% if posts|length > 3 %}
+						<li
+							class="grid__item item--banner">{# {% include 'content/section-banner.twig' %} #}
+						</li>
+					{% endif %}
+
+				</ul>
+
+				{% include 'components/pagination.twig' %}
+
+			</div>
+		</section>
+
+	</main>
+
+	<aside class="side__content">{# {% include 'content/section-nav.twig' with { 'show_archive' : false } %} #}
+		{# {% include 'content/section-seo.twig' %} #}
+	</aside>
+
+{% endblock %}

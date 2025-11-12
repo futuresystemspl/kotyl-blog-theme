@@ -1,0 +1,43 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+	<main class="main__content content--tags">
+
+		{% include "components/breadcrumbs.twig" %}
+
+		<section class="content__section section-title">
+			<div class="viewport">
+				<div class="content__title text--center">
+					<h4>{{ __('Lista tagów', 'theme') }}</h4>
+					<h1>{{ __('Popularne tematy', 'theme') }}</h1>
+				</div>
+			</div>
+		</section>
+
+		<section class="content__section section-topics">
+			<div class="viewport viewport--desktop">
+				<ul class="tags__list list--archive">
+					{% for tag in tags %}
+						<li class="list__item item--tag">
+							<a href={{ tag.link }}>{{ tag.name }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+
+	</main>
+
+	<aside class="side__content">
+		{# {% include 'content/section-nav.twig' with { 'show_tags' : false } %} #}
+		{% include 'content/section-seo.twig' %}
+	</aside>
+
+
+{% endblock %}
+
+
+
+
+

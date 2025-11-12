@@ -1,0 +1,15 @@
+<section class="post__header">
+	<div class="viewport viewport--article">
+
+		<h1 class="post__title">{{post.title}}</h1>
+
+		{% include 'partials/post/post-tags.twig' with { 'tags' : post.tags }  %}
+
+		<p class="post__excerpt">{{ post.post_excerpt }}</p>
+
+		{% include 'components/breadcrumbs.twig' %}
+
+		{% include 'partials/post/post-thumbnail.twig' %}
+
+	</div>
+</section>

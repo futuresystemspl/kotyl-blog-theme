@@ -1,0 +1,22 @@
+<li class="{% if class %}{{ class }}{% else %}item--post{% endif %}">
+
+	{% if post.thumbnail %}
+		<a href="{{post.link}}" class="post__cover">
+			{% include "partials/post/post-cover.twig" with { 'class' : false, 'lazy' : (lazy is defined and lazy == false ? false : true) } %}
+		</a>
+	{% endif %}
+
+	<div class="post__meta">
+		{% block tags %}
+			{% if show_tags == true or show_tags is not defined %}
+				{% include 'partials/post/post-tags.twig' with { 'tags' : post.tags }  %}
+			{% endif %}
+		{% endblock %}
+
+		<h2 class="post__title">
+			<a href="{{post.link}}">{{ post.title }}</a>
+		</h2>
+		<p>{{ post.post_excerpt }}</p>
+		<a href="{{post.link}}" class="post__cta button button--transparent">{{ __('Czytaj dalej', 'theme') }}</a>
+	</div>
+</li></a></li>

@@ -1,0 +1,344 @@
+{
+    "key": "group_60d314a4d13bc",
+    "title": "Flexible content",
+    "fields": [
+        {
+            "key": "field_60d314a52e6e6",
+            "label": "Treść",
+            "name": "content",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "Dodaj sekcje z podziałem na treści korzystając z przycisku na dole. Kolejność można zmieniać dowolnie za pomocą myszki (złap, przeciągnij i upuść).\r\n\r\nZacznij od dodania \"Sekcji z tekstem\", aby skorzystać z edytora tekstowego.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "5ad908dd24dd9": {
+                    "key": "5ad908dd24dd9",
+                    "name": "section_text",
+                    "label": "Sekcja z tekstem",
+                    "display": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_60d98c8adcb3b",
+                            "label": "Ilość kolumn",
+                            "name": "layout",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "6",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "1": "1",
+                                "2": "2"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "wpml_cf_preferences": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "create_options": 0,
+                            "save_options": 0
+                        },
+                        {
+                            "key": "field_60d314a532190",
+                            "label": "Kolumna 1",
+                            "name": "block_text",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "47",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 2,
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_60d98c74dcb3a",
+                            "label": "Kolumna 2",
+                            "name": "block_text_2",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_60d98c8adcb3b",
+                                        "operator": "==",
+                                        "value": "2"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "47",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 2,
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5f620ec51c119": {
+                    "key": "layout_5f620ec51c119",
+                    "name": "section_products",
+                    "label": "Sekcja z produktami ze sklepu",
+                    "display": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_60d314a54bb72",
+                            "label": "ID kategorii",
+                            "name": "id_category",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "ID kategorii, z której mają być wyświetlone produkty. Identyfikator kategorii w sklepie znajduje się w adresie URL",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": "",
+                            "max": "",
+                            "step": ""
+                        },
+                        {
+                            "key": "field_60d314a54f57c",
+                            "label": "Nagłówek sekcji",
+                            "name": "header",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Opcjonalny nagłówek dla sekcji z produktami. Jeśli pozostawisz to pole puste, nagłówkiem będzie nazwa kategorii dla podanego wyżej ID.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 3,
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_60d49ac82d2b7",
+                            "label": "Link",
+                            "name": "url",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Opcjonalnie. Standardowo pod produktami zostanie wyświetlony button CTA przekierowujący do kategorii o podanym ID. Jeśli jednak chcesz podać inny link (bo np. kategoria o danym ID jest ukryta lub wyłączona), wpisz go tutaj. W innym wypadku pozostaw to pole puste.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 1,
+                            "placeholder": "https:\/\/kotyl.eu\/",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6509697f24949": {
+                    "key": "layout_6509697f24949",
+                    "name": "section_lookbook",
+                    "label": "Sekcja lookbook",
+                    "display": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_6509698e2494a",
+                            "label": "Zdjęcie 1",
+                            "name": "image_left",
+                            "aria-label": "",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_650969af2494b",
+                                    "label": "Zdjęcie",
+                                    "name": "image",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "Preferowane wymiary: 1280x1280px. Proporcje mogą być także pionowe (np. 960x1280px), jednak limit wysokości oraz szerokości wgrywanego zdjęcia to 1280px.",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "thumbnail",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": 1280,
+                                    "max_height": 1280,
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_650969d12494c",
+                                    "label": "Link do produktu (opcjonalnie)",
+                                    "name": "url",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "Opcjonalny link do produktu widocznego na zdjęciu. Pełny adres URL rozpoczynający się od protokołu https:\/\/ejka.pl",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "https:\/\/ejka.pl",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_65096a122494d",
+                            "label": "Zdjęcie 2",
+                            "name": "image_right",
+                            "aria-label": "",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_65096a122494e",
+                                    "label": "Zdjęcie",
+                                    "name": "image",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "Preferowane wymiary: 1280x1280px. Proporcje mogą być także pionowe (np. 960x1280px), jednak limit wysokości oraz szerokości wgrywanego zdjęcia to 1280px.",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "thumbnail",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": 1280,
+                                    "max_height": 1280,
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_65096a122494f",
+                                    "label": "Link do produktu (opcjonalnie)",
+                                    "name": "url",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "Opcjonalny link do produktu widocznego na zdjęciu. Pełny adres URL rozpoczynający się od protokołu https:\/\/ejka.pl",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "https:\/\/ejka.pl",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Dodaj sekcję"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": ""
+}

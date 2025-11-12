@@ -1,0 +1,54 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+	<main class="content__main content--tag">
+
+		{% include "components/breadcrumbs.twig" %}
+
+		<section class="content__title text--center">
+			<h4>{{ __('Temat', 'theme') }}</h4>
+			<h1>{{ tag.name }}</h1>
+
+			{% if tag.description %}
+				<p class="tag__desc">{{ tag.description }}</p>
+			{% endif %}
+
+			{# TO DO: products cta? #}
+
+		</section>
+
+		<section class="content__section section-posts">
+
+			<div class="viewport">
+				<ul class="posts__grid grid--archive">
+					{% for post in posts %}
+						{% include 'partials/post/item.twig' with { 'class' : 'grid__item item--post'} %}
+					{% endfor %}
+
+					{% if posts|length > 3 %}
+						{% if tag.has_products %}
+							<li class="grid__item item--products">
+								{% include 'content/section-shop-category.twig' with { 'layout' : 'compact', 'id_category' : tag.shop_category.id_shop_category, 'header_text' : tag.shop_category.header ? tag.shop_category.header : false } %}
+							</li>
+						{% else %}
+							<li
+								class="grid__item item--banner">{# {% include 'content/section-banner.twig' %} #}
+							</li>
+						{% endif %}
+					{% endif %}
+
+				</ul>
+				<!-- /posts__grid -->
+			</div>
+		</section>
+
+		{% include 'components/pagination.twig' %}
+
+	</main>
+
+	<aside class="side__content">{# {% include 'content/section-nav.twig' with { 'show_archive' : false } %} #}
+		{# {% include 'content/section-seo.twig' %} #}
+	</aside>
+
+{% endblock %}

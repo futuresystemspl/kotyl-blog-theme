@@ -1,0 +1,125 @@
+{
+    "key": "group_628780ce0ccfb",
+    "title": "Tagi",
+    "fields": [
+        {
+            "key": "field_628780e0668ee",
+            "label": "Wyświetl produkty ze sklepu",
+            "name": "has_products",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_62878124668ef",
+            "label": "Powiązana kategoria w sklepie",
+            "name": "shop_category",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_628780e0668ee",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6287814d668f0",
+                    "label": "ID kategorii",
+                    "name": "id_shop_category",
+                    "type": "number",
+                    "instructions": "ID kategorii można sprawdzić w adresie URL",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_6287817a668f1",
+                    "label": "Nagłówek sekcji",
+                    "name": "header",
+                    "type": "text",
+                    "instructions": "Opcjonalny nagłówek dla sekcji z produktami. Jeśli pozostawisz to pole puste, nagłówkiem będzie nazwa kategorii dla podanego wyżej ID.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_628781aa668f2",
+                    "label": "Link",
+                    "name": "url",
+                    "type": "url",
+                    "instructions": "Opcjonalnie. Standardowo pod produktami zostanie wyświetlony button CTA przekierowujący do kategorii o podanym ID. Jeśli jednak chcesz podać inny link (bo np. kategoria o danym ID jest ukryta lub wyłączona), wpisz go tutaj. W innym wypadku pozostaw to pole puste.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "post_tag"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1653050684
+}

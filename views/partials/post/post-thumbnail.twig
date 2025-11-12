@@ -1,0 +1,13 @@
+{% if post.thumbnail %}
+	<section class="post__thumbnail">
+		<a href="{{ link.store }}">
+			<figure>
+				<picture>
+					<source srcset="{{ post.thumbnail.src('large')|towebp }}" type="image/webp">
+					<img loading="lazy" src="{{ post.thumbnail.src('large') }}" alt="{{ post.thumbnail.alt ? post.thumbnail.alt : post.title }}"/>
+				</picture>
+			</figure>
+		</a>
+		<figcaption>{{ post.thumbnail.caption }}</figcaption>
+	</section>
+{% endif %}
