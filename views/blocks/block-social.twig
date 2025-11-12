@@ -1,26 +1,31 @@
-<ul class="block-social{% if class %} {{ class }}{% endif %}">
-    <li>
-        <a href="" title="">
-            <figure class="ui-ico ico--facebook">
-                {{ source('assets/svg/ico/facebook.svg', ignore_missing = true) }}
-            </figure>   
-            <span class="label">{{ __('Facebook.', 'theme') }}</span>
-        </a>
-    </li>
-    <li>
-        <a href="" title="">
-            <figure class="ui-ico ico--facebook">
-                {{ source('assets/svg/ico/twitter.svg', ignore_missing = true) }}
-            </figure>   
-            <span class="label">{{ __('Twitter.', 'theme') }}</span>
-        </a>
-    </li>    
-    <li>
-        <a href="" title="">
-            <figure class="ui-ico ico--youtube">
-                {{ source('assets/svg/ico/youtube.svg', ignore_missing = true) }}
-            </figure>   
-            <span class="label">{{ __('YouTube.', 'theme') }}</span>
-        </a>
-    </li>				
-</ul>
+{% set social = [
+    { 
+        'url': 'https://www.facebook.com/p/Kotyl-100035400356311/', 
+        'ico' : 'facebook',
+        'title' : __('Producent butów KOTYL na facebooku', 'theme'),
+        'label' : 'fb.com/bravomodapl'
+    },
+    { 
+        'url': 'https://instagram.com/Kotyl__', 
+        'ico' : 'instagram',
+        'title' : __('Producent butów KOTYL na instagramie', 'theme'),
+        'label' : 'instagram.com/bravomodapl'
+    },
+  ] 
+%}
+
+<div class="block-social{% if cssClass %} {{ cssClass }}{% endif %}">
+	{% if show_title is defined %}
+		<h4 class="block__title">{{ __('Media społecznościowe', 'theme') }}</h4>
+	{% endif %}
+	<ul>
+		{% for platform in social %}
+			<li>
+				<a href="{{ platform.url }}" title="{{ platform.title }}">
+					{% include "components/ui-ico.twig" with { 'ico' : platform.ico, 'embed' : true } %}
+					<span class="label">{{ platform.label }}</span>
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

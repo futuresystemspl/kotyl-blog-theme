@@ -35,8 +35,7 @@ function theme_global_context($context)
     $context['is_single'] = is_single();
 
     //https://timber.github.io/docs/v2/guides/menus/
-    $context['nav'] = Timber::get_menu('top-nav', ['depth' => 2]);
-    $context['nav'] = Timber::get_menu('bottom-nav', ['depth' => 2]);
+    $context['nav'] = Timber::get_menu('nav-top', ['depth' => 1]);
 
     //global links
     $context['links'] = array(

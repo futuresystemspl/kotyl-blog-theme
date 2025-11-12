@@ -2,85 +2,77 @@
 
 /* UI (User Intefrace) */
 
-/**
- * Hamburger to x transformicon source:
- * https://codepen.io/designcouch/pen/Atyop 
- **/
-
+/** 
+ * Animated Hamburger icon inspired by https://codepen.io/fromwireframes/pen/arMrYp
+ */
+/* hamburger to x transformicon 
+ * source: https://codepen.io/designcouch/pen/Atyop 
+ */
 .ui-nav {
-    display: block;
+    display: none;
     position: relative;
-    width: 3rem;
-    height: 30px;
+    width: 1.375rem;
+    height: 1rem;
+    margin-left: 1rem;
 
-    text-indent: -999em;
-    
-    cursor: pointer;
+    @media (max-width: variables.$breakpoint_mobile) {
+        display: block;
+    }
 
     span {
         display: block;
         position: absolute;
-        height: 5px;
+        height: 2px;
         width: 100%;
-        background: #fff;
-        opacity: 1;
+        background: #000;
         left: 0;
 
-        -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
-        -webkit-transition: .25s ease-in-out;
-                transition: .25s ease-in-out;       
-                        
+        transform: rotate(0deg);
+
+        transition: all 0.25s;
+        border-radius: 1px;
+
         &:nth-child(1) {
             top: 0px;
-        }  
+        }
         &:nth-child(2),
         &:nth-child(3) {
-            top: 12px;
+            top: 6px;
         }
         &:nth-child(4) {
-            top: 24px;
+            top: 12px;
         }
     }
 
-    
     &.menu--open {
         span {
             &:nth-child(1) {
-                    top: 10px;
-                    width: 0%;
-                    left: 50%;
+                top: 6px;
+                width: 0%;
+                left: 50%;
             }
             &:nth-child(2) {
-                    -webkit-transform: rotate(45deg);
-                            transform: rotate(45deg);               
+                transform: rotate(45deg);
             }
             &:nth-child(3) {
-                    -webkit-transform: rotate(-45deg);
-                            transform: rotate(-45deg);               
+                transform: rotate(-45deg);
             }
             &:nth-child(4) {
-                    top: 10px;
-                    width: 0%;
-                    left: 50%;               
+                top: 6px;
+                width: 0%;
+                left: 50%;
             }
         }
-        
-    }
-
-    @media (min-width: variables.$breakpoint_mobile + 1px) {
-        display: none;
     }
 }
 
 //inline svgs icons
 .ui-ico {
-
     display: inline-flex;
     align-items: center;
     width: auto;
     height: 3rem;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
 
     img,
     svg {
@@ -89,8 +81,8 @@
     }
 
     //paths, polygons, lines, rects etc controlled by additional class
-    .svg__ico {			
-        transition: all .2s ease-in-out;
+    .svg__ico {
+        transition: all 0.2s ease-in-out;
     }
 
     &.ico--flag {
@@ -98,10 +90,9 @@
         height: 2rem;
         margin: 0;
         border-radius: 50%;
-        border: 2px solid #C4C4C4;
-        background: #C4C4C4;       
+        border: 2px solid #c4c4c4;
+        background: #c4c4c4;
     }
-
 }
 .ui-loader {
     text-align: center;
@@ -118,5 +109,4 @@
             height: 2rem;
         }
     }
-
 }

@@ -1,17 +1,18 @@
 @use "../utilities/variables";
 
 .block-social {
-
-    display: flex;
-    justify-content: center;
+    ul {
+        display: flex;
+        justify-content: center;
+    }
 
     .ui-ico {
-        margin: 0 .75rem;
+        margin: 0 0.5rem;
         svg {
             height: 2rem;
         }
         .svg__ico {
-            fill: #fff;
+            fill: #000;
         }
     }
 
@@ -25,12 +26,16 @@
     }
 
     &.block--header {
-        margin-left: 1rem;
+        ul {
+            justify-content: flex-end;
+        }
         .ui-ico {
-            margin: 0 .5rem;
+            svg {
+                height: 1.5rem;
+            }
         }
 
-        @media (max-width: variables.$breakpoint_hd) {
+        @media (min-width: variables.$breakpoint_mobile + 1px) {
             display: none;
         }
     }

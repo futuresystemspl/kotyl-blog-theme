@@ -1,3 +1,5 @@
-<figure class="{% if cssClass is defined %}{{ cssClass }} {% endif %}logo">
-    {{ source('assets/svg/logo.svg') }}
+<figure class="{% if cssClass %}{{cssClass}} {% endif %}logo">
+	<a href="{{ site.url }}" title="{{ site.description }}">
+		{{ source('assets/svg/logo.svg', ignore_missing = false) }}
+	</a>
 </figure>

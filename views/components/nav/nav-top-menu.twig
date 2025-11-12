@@ -2,55 +2,54 @@
 
 <nav id="nav-top-menu" class="nav--top-menu">
 
-    <div class="menu">
+	<div class="menu">
 
-            <a class="nav__ui do-toggle-nav ui-action action--close" href="#">
-                <span class="label">Zamknij menu</span>
-            </a>        
+		<a class="nav__ui do-toggle-nav ui-action action--close" href="#">
+			<span class="label">Zamknij menu</span>
+		</a>
 
-            <a class="nav__logo" href="{{ site.url }}">
-                {% include "components/logo.twig"  %}
-            </a>
+		{% include "components/logo.twig" with { 'cssClass' : 'nav__logo' } %}
 
-            <ul class="menu__list">
-                {% for item in nav.items %}
-                    <li class="menu__item{% if item.children %} item--has-submenu{% endif %} {{ item.classes|join(' ') }}">
-                        <a href="{{ item.link }}">{{ item.title }}</a>
+		<ul class="menu__list">
+			{% for item in nav.items %}
+				<li class="menu__item{% if item.children %} item--has-submenu{% endif %} {{ item.classes|join(' ') }}">
+					<a href="{{ item.link }}">{{ item.title }}</a>
 
-                        {% if item.children and hide_submenu is not defined %}
-                            <nav class="item__submenu">             
-                                
-                                <div class="submenu__title">
-                                    <a href="#" class="do-toggle-submenu">
-                                        <span class="label">Wróć do menu</span>
-                                    </a>
-                                    <h3>{{ item.title }}</h3>
-                                </div>
-                                
-                                {# one nest level only #}
-                                <ul class="submenu__categories">
-                                    <div class="viewport">
-                                    {% for child in item.children %}
-                                        <li class="submenu__item {{ child.classes|join(' ') }}">
-                                            <a href="{{ child.link }}">{{ child.title }}</a>
-                                        </li>
-                                    {% endfor %}
-                                    </div>
-                                </ul>
+					{% if item.children and hide_submenu is not defined %}
+						<nav class="item__submenu">
 
-                            </nav>
-                        {% endif %}
+							<div class="submenu__title">
+								<a href="#" class="do-toggle-submenu">
+									<span class="label">Wróć do menu</span>
+								</a>
+								<h3>{{ item.title }}</h3>
+							</div>
 
-                    </li>
-                {% endfor %}
+							{# one nest level only #}
+							<ul class="submenu__categories">
+								<div class="viewport">
+									{% for child in item.children %}
+										<li class="submenu__item {{ child.classes|join(' ') }}">
+											<a href="{{ child.link }}">{{ child.title }}</a>
+										</li>
+									{% endfor %}
+								</div>
+							</ul>
+
+						</nav>
+					{% endif %}
+
+				</li>
+			{% endfor %}
 
 
-                <li class="menu__item item--socialmedia">
-                    {# {% include "blocks/block-socialmedia.twig" %} #}
-                </li>
+			<li class="menu__item item--social">
+				{% include "blocks/block-social.twig" %}
+			</li>
 
-            </ul>
-            
-    </div><!-- /menu -->
+		</ul>
+
+	</div>
+	<!-- /menu -->
 
 </nav>

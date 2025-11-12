@@ -1,38 +1,21 @@
 @use "../utilities/variables";
 
 .header-top {
-    a {
-    }
-
     @media (min-width: variables.$breakpoint_mobile + 1px) {
-        position: sticky;
-        top: 0;
-        z-index: 99;
+        padding: 2rem 0;
+        .section--branding {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
     }
 
-    /**
-    *  Horizontal layout
-    **/
-
-    .header__layout {
-        display: grid;
-        grid-template-columns: 1fr;
-
-        @media (min-width: variables.$breakpoint_mobile + 1px) {
-            padding: 0 0 0 1rem;
-            grid-auto-flow: column;
-        }
-
-        @media (max-width: variables.$breakpoint_mobile) {
-            .header__branding {
-                display: flex;
-                justify-content: space-between;
-                padding: 0 1rem;
-            }
-
-            .logo {
-                margin: 1rem 0;
-            }
+    @media (max-width: variables.$breakpoint_mobile) {
+        padding: 1rem 0;
+        .section--branding {
+            display: grid;
+            grid-template-columns: 1fr max-content 1fr;
+            align-items: center;
         }
     }
 }
