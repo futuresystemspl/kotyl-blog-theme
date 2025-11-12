@@ -1,26 +1,23 @@
-import React from 'react';
+import React from "react";
 
-import DataContext from './DataContext';
-import useSWR from 'swr'
-import Loader from './Loader';
+import DataContext from "./DataContext";
+import useSWR from "swr";
+import Loader from "./Loader";
 
-const fetcher = (...args) => fetch(...args).then(res => res.json())
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
-function DataProvider(props) {
+function DataProvider({ api_url, refresh, message_empty, children }) {
+    const { data, error, isLoading } = useSWR(api_url, fetcher, {
+        revalidateOnFocus: false,
+        revalidateIfStale: false,
+        refreshInterval: refresh ? refresh : 0,
+    });
 
-    const {data, error} = useSWR(props.api_url, fetcher, { revalidateOnFocus : false, refreshInterval : props.refresh ? props.refresh : 0 });
+    if (error) return <div>Error</div>;
+    if (isLoading) return <Loader />;
+    if (Array.isArray(data) && data.length === 0) return <p>{message_empty ? message_empty : wp_core.i18n.no_data}</p>;
 
-    if (error) return <div>Error</div>
-    if (!data) return <Loader />
-    if (!error && !data) return null
-    if (data && data.length == 0) return <p>{props.message_empty ? props.message_empty : wp_core.i18n.no_data}</p>
-
-    return (
-        <DataContext.Provider value={data}>
-            {props.children}
-        </DataContext.Provider>
-    )
-
+    return <DataContext.Provider value={data}>{children}</DataContext.Provider>;
 }
 
 export default DataProvider;

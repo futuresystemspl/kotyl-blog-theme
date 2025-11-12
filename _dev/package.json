@@ -25,5 +25,10 @@
     "sass-loader": "^16.0.6",
     "webpack": "^5.102.1",
     "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "swr": "^2.3.6"
   }
 }

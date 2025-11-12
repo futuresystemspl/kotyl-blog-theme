@@ -1,5 +1,5 @@
-import posts from './render/posts';
+import shopCategory from "./render/shopCategory";
 
 export let Render = {
-    posts, 
-}
+    shopCategory,
+};

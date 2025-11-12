@@ -1,23 +1,18 @@
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation.
+/*! ../../tools */
 
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
-***************************************************************************** */
+/*! ../Button */
 
 /*! ../DataContext */
 
+/*! ../Product/ProductsList */
+
+/*! ../_internal/index.mjs */
+
+/*! ../cjs/use-sync-external-store-shim.development.js */
+
 /*! ../components/DataProvider */
 
-/*! ../components/Post/PostsList */
+/*! ../components/Shop/ShopCategory */
 
 /*! ../ui */
 
@@ -25,7 +20,11 @@ PERFORMANCE OF THIS SOFTWARE.
 
 /*! ./Loader */
 
-/*! ./PostItem */
+/*! ./ProductAttributes */
+
+/*! ./ProductItem */
+
+/*! ./cjs/react-dom-client.development.js */
 
 /*! ./cjs/react-dom.development.js */
 
@@ -33,17 +32,33 @@ PERFORMANCE OF THIS SOFTWARE.
 
 /*! ./cjs/scheduler.development.js */
 
+/*! ./config-context-client-BoS53ST9.mjs */
+
+/*! ./constants.mjs */
+
+/*! ./events.mjs */
+
 /*! ./render */
 
-/*! ./render/posts */
+/*! ./render/shopCategory */
 
 /*! ./ui */
 
+/*! ./ui/modal */
+
 /*! ./ui/nav */
+
+/*! ./ui/player */
+
+/*! ./ui/sidebar */
 
 /*! ./ui/tabs */
 
+/*! ./ui/video */
+
 /*! ./ui/viewport */
+
+/*! dequal/lite */
 
 /*! react */
 
@@ -55,9 +70,15 @@ PERFORMANCE OF THIS SOFTWARE.
 
 /*! swr */
 
+/*! use-sync-external-store/shim/index.js */
+
 /*!*******************!*\
-  !*** ./_js/ui.ts ***!
+  !*** ./_js/ui.js ***!
   \*******************/
+
+/*!**********************!*\
+  !*** ./_js/tools.js ***!
+  \**********************/
 
 /*!***********************!*\
   !*** ./_js/global.js ***!
@@ -68,24 +89,44 @@ PERFORMANCE OF THIS SOFTWARE.
   \***********************/
 
 /*!***********************!*\
-  !*** ./_js/ui/nav.ts ***!
+  !*** ./_js/ui/nav.js ***!
   \***********************/
 
 /*!************************!*\
   !*** ./_js/ui/tabs.js ***!
   \************************/
 
+/*!*************************!*\
+  !*** ./_js/ui/modal.js ***!
+  \*************************/
+
+/*!*************************!*\
+  !*** ./_js/ui/video.js ***!
+  \*************************/
+
+/*!**************************!*\
+  !*** ./_js/ui/player.js ***!
+  \**************************/
+
+/*!***************************!*\
+  !*** ./_js/ui/sidebar.js ***!
+  \***************************/
+
 /*!****************************!*\
-  !*** ./_js/ui/viewport.ts ***!
+  !*** ./_js/ui/viewport.js ***!
   \****************************/
 
-/*!*****************************!*\
-  !*** ./_js/render/posts.js ***!
-  \*****************************/
+/*!***********************************!*\
+  !*** ./_js/components/Button.jsx ***!
+  \***********************************/
 
 /*!***********************************!*\
   !*** ./_js/components/Loader.jsx ***!
   \***********************************/
+
+/*!*************************************!*\
+  !*** ./_js/render/shopCategory.jsx ***!
+  \*************************************/
 
 /*!*************************************!*\
   !*** ./node_modules/react/index.js ***!
@@ -107,25 +148,53 @@ PERFORMANCE OF THIS SOFTWARE.
   !*** ./node_modules/scheduler/index.js ***!
   \*****************************************/
 
-/*!*****************************************!*\
-  !*** ./node_modules/swr/dist/index.mjs ***!
-  \*****************************************/
-
-/*!******************************************!*\
-  !*** ./_js/components/Post/PostItem.jsx ***!
-  \******************************************/
-
 /*!******************************************!*\
   !*** ./node_modules/react-dom/client.js ***!
   \******************************************/
 
-/*!*******************************************!*\
-  !*** ./_js/components/Post/PostsList.jsx ***!
-  \*******************************************/
+/*!********************************************!*\
+  !*** ./node_modules/dequal/lite/index.mjs ***!
+  \********************************************/
+
+/*!**********************************************!*\
+  !*** ./_js/components/Shop/ShopCategory.jsx ***!
+  \**********************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/swr/dist/index/index.mjs ***!
+  \***********************************************/
+
+/*!************************************************!*\
+  !*** ./_js/components/Product/ProductItem.jsx ***!
+  \************************************************/
+
+/*!*************************************************!*\
+  !*** ./_js/components/Product/ProductsList.jsx ***!
+  \*************************************************/
+
+/*!***************************************************!*\
+  !*** ./node_modules/swr/dist/_internal/index.mjs ***!
+  \***************************************************/
+
+/*!****************************************************!*\
+  !*** ./node_modules/swr/dist/_internal/events.mjs ***!
+  \****************************************************/
 
 /*!*****************************************************!*\
   !*** ./node_modules/react/cjs/react.development.js ***!
   \*****************************************************/
+
+/*!******************************************************!*\
+  !*** ./_js/components/Product/ProductAttributes.jsx ***!
+  \******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/swr/dist/_internal/constants.mjs ***!
+  \*******************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/use-sync-external-store/shim/index.js ***!
+  \************************************************************/
 
 /*!*************************************************************!*\
   !*** ./node_modules/react-dom/cjs/react-dom.development.js ***!
@@ -135,16 +204,54 @@ PERFORMANCE OF THIS SOFTWARE.
   !*** ./node_modules/scheduler/cjs/scheduler.development.js ***!
   \*************************************************************/
 
+/*!********************************************************************!*\
+  !*** ./node_modules/react-dom/cjs/react-dom-client.development.js ***!
+  \********************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/swr/dist/_internal/config-context-client-BoS53ST9.mjs ***!
+  \****************************************************************************/
+
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js ***!
+  \**********************************************************************************************/
+
 /**
- * Checks if an event is supported in the current execution environment.
+ * @license React
+ * react-dom-client.development.js
  *
- * NOTE: This will not work correctly for non-generic events such as `change`,
- * `reset`, `load`, `error`, and `select`.
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
  *
- * Borrows from Modernizr.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * react-dom.development.js
  *
- * @param {string} eventNameSuffix Event name, e.g. "click".
- * @return {boolean} True if the event is supported.
- * @internal
- * @license Modernizr 3.0.0pre (Custom Build) | MIT
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * scheduler.development.js
+ *
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * use-sync-external-store-shim.development.js
+ *
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
