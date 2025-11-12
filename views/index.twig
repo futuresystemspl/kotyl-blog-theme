@@ -1,7 +1,16 @@
 {% extends "layout/base.twig" %}
 
 {% block body %}
-   
-    <h1>hello from twig</h1>
+
+	<h1>hello from twig</h1>
+
+
+	{% for product in new_products.products %}
+
+		<li>
+			<a href="{{product.link}}">{{product.name}}</a>
+		</li>
+
+	{% endfor %}
 
 {% endblock %}

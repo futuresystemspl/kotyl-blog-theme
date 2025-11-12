@@ -83,6 +83,6 @@ function theme_render_flexible_content($field)
 
         return true;
     } elseif (file_exists($layout_file_template_path)) {
-        return Timber::fetch('views/partials/flexible-content/' . $layout . '.twig', $context);
+        return Timber::compile('views/partials/flexible-content/' . $layout . '.twig', $context);
     }
 }
