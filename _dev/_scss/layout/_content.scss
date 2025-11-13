@@ -18,8 +18,14 @@
 
     .section__header {
         max-width: 45rem;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto 2rem;
+
+        h2 {
+            margin: 0;
+        }
+        p {
+            margin: 1rem 0;
+        }
     }
 
     .section__cta {

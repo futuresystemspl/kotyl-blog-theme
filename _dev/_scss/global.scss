@@ -35,8 +35,10 @@
 @use "content/section-seo";
 @use "content/section-tags";
 @use "content/section-features";
+@use "content/section-new-products";
 
 @use "partials/listing/post";
+@use "partials/listing/product";
 @use "partials/listing/tag";
 
 //include pages in bundle or load as separate files via wp_enqueue_style?

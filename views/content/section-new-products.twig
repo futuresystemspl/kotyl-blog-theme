@@ -1,0 +1,17 @@
+<section class="content__section section-new-products">
+
+	<div class="viewport">
+
+		<div class="section__header text--center">
+			<h2>{{ __('Nasza kolekcja', 'theme') }}</h2>
+			<p>{{ __('Odkryj nasze najnowsze produkty i wybierz najmodniejsze buty do Twojej stylizacji!', 'theme') }}</p>
+		</div>
+
+		{% include "partials/categories-list.twig" with { 'categories' : store_categories.subcategories } %}
+
+		<div class="shop-category" data-category-id="3" data-show-header="false" data-show-cta="false"></div>
+
+	</div>
+	<!-- /viewport -->
+
+</section>

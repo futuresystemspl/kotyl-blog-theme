@@ -20,8 +20,6 @@
 
 /*! ./Loader */
 
-/*! ./ProductAttributes */
-
 /*! ./ProductItem */
 
 /*! ./cjs/react-dom-client.development.js */
@@ -183,10 +181,6 @@
 /*!*****************************************************!*\
   !*** ./node_modules/react/cjs/react.development.js ***!
   \*****************************************************/
-
-/*!******************************************************!*\
-  !*** ./_js/components/Product/ProductAttributes.jsx ***!
-  \******************************************************/
 
 /*!*******************************************************!*\
   !*** ./node_modules/swr/dist/_internal/constants.mjs ***!

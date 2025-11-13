@@ -1,0 +1,119 @@
+@use "../../utilities/variables";
+
+.products-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1rem;
+
+    @media (max-width: variables.$breakpoint_mobile) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: variables.$breakpoint_laptop) and (min-width: variables.$breakpoint_tablet + 1px) {
+        grid-template-columns: repeat(4, 1fr);
+        > .list__item {
+            &:nth-child(n + 5) {
+                display: none;
+            }
+        }
+    }
+    @media (max-width: variables.$breakpoint_tablet) {
+        grid-template-columns: repeat(3, 1fr);
+        > .list__item {
+            &:nth-child(n + 7) {
+                display: none;
+            }
+        }
+    }
+    @media (max-width: variables.$breakpoint_phone-big) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem 0.5rem;
+    }
+    @media (min-width: variables.$breakpoint_tablet + 1px) and (max-width: variables.$breakpoint_laptop) {
+    }
+    @media (min-width: variables.$breakpoint_laptop + 1px) {
+        > .list__item {
+            &:nth-child(n + 6) {
+                display: none;
+            }
+        }
+    }
+}
+
+.item--product {
+    position: relative;
+
+    .item__image {
+        display: grid;
+        position: relative;
+
+        > * {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image--primary {
+        }
+        .image--secondary {
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                .image--secondary {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &::after {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(22, 22, 22, 0.05);
+        }
+    }
+
+    .item__meta {
+        padding: 0 1rem;
+        margin-top: 0.75rem;
+        h3 {
+            font-size: 1em;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: variables.$breakpoint_mobile) {
+            h3 {
+                font-size: 1em;
+            }
+        }
+        @media (max-width: variables.$breakpoint_phone-big) {
+        }
+    }
+
+    .item__prices {
+        .price {
+            font-weight: 300;
+
+            &.price--old {
+                text-decoration: line-through;
+                margin-right: 0.25rem;
+            }
+        }
+
+        @media (max-width: variables.$breakpoint_mobile) {
+        }
+    }
+}
