@@ -38,7 +38,7 @@ footer {
 
     &.section--credits {
         max-width: 55rem;
-        margin: 1rem auto 0;
+        margin: 0 auto;
     }
 }
 
@@ -82,7 +82,7 @@ footer {
                 display: block;
 
                 &:not(:last-child) {
-                    margin-bottom: 1rem;
+                    margin-bottom: 1.5rem;
                 }
             }
         }
@@ -92,6 +92,11 @@ footer {
 .footer__disclaimer {
     color: #b8b8b8;
     font-size: 0.875em;
+    margin: 1rem 0;
+
+    @media (max-width: variables.$breakpoint_hd) {
+        margin: 2rem 0;
+    }
 }
 .footer__credits {
     margin: 0;

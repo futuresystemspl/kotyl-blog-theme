@@ -1,0 +1,77 @@
+{% set path = '/assets/img/content/instagram/' %}
+
+{% set gallery_1 = [
+    { 
+        'src': '1.jpg', 
+        'alt' : ''
+    },
+    { 
+        'src':  '2.jpg', 
+        'alt' : ''
+    },     
+    { 
+        'src':  '6.jpg', 
+        'alt' : ''
+    },
+
+    { 
+        'src':  '3.jpg', 
+        'alt' : ''
+    },            
+  ] 
+%}
+
+{% set gallery_2 = [
+    { 
+        'src': '5.jpg', 
+        'alt' : ''
+    },    
+    { 
+        'src': '2.jpg', 
+        'alt' : ''
+    },
+    { 
+        'src': '7.jpg', 
+        'alt' : ''
+    },
+    { 
+        'src': '8.jpg', 
+        'alt' : ''
+    },            
+  ] 
+%}
+
+<section class="content__section section-instagram section--no-margin">
+
+	<div class="grid__item item--gallery">
+		{% for image in gallery_1 %}
+			<figure>
+				{% include "components/picture.twig" with { 'src' : theme.path ~ path ~ image.src, 'alt' : image.alt, 'width' : 640, 'height' : 640, 'theme_image' : true } %}
+			</figure>
+		{% endfor %}
+	</div>
+
+	<div class="grid__item item--content">
+
+		<div class="item__content">
+
+			{% include "components/logo.twig" with { 'cssClass' : 'item__logo' } %}
+
+			<h2>{{ __('Odwiedź nas w mediach społecznościowych!', 'theme') }}</h2>
+
+			{% include "blocks/block-social.twig" with { 'show_label' : true } %}
+
+		</div>
+
+	</div>
+
+	<div class="grid__item item--gallery">
+		{% for image in gallery_2 %}
+			<figure>
+				{% include "components/picture.twig" with { 'src' : theme.path ~ path ~ image.src, 'alt' : image.alt, 'width' : 640, 'height' : 640, 'theme_image' : true } %}
+			</figure>
+		{% endfor %}
+	</div>
+
+
+</section>

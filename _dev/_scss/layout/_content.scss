@@ -26,6 +26,10 @@
         margin: 2rem 0;
         text-align: center;
     }
+
+    &.section--no-margin {
+        margin: 0;
+    }
 }
 
 .section__body {

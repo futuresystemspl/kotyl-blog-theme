@@ -3,13 +3,13 @@
         'url': 'https://www.facebook.com/p/Kotyl-100035400356311/', 
         'ico' : 'facebook',
         'title' : __('Producent butów KOTYL na facebooku', 'theme'),
-        'label' : 'fb.com/bravomodapl'
+        'label' : 'fb.com/kotyleu'
     },
     { 
         'url': 'https://instagram.com/Kotyl__', 
         'ico' : 'instagram',
         'title' : __('Producent butów KOTYL na instagramie', 'theme'),
-        'label' : 'instagram.com/bravomodapl'
+        'label' : 'instagram.com/kotyleu'
     },
   ] 
 %}
@@ -23,7 +23,9 @@
 			<li>
 				<a href="{{ platform.url }}" title="{{ platform.title }}">
 					{% include "components/ui-ico.twig" with { 'ico' : platform.ico, 'embed' : true } %}
-					<span class="label">{{ platform.label }}</span>
+					{% if show_label is defined %}
+						<span class="label">{{ platform.label }}</span>
+					{% endif %}
 				</a>
 			</li>
 		{% endfor %}

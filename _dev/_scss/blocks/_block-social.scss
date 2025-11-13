@@ -9,7 +9,7 @@
     .ui-ico {
         margin: 0 0.5rem;
         svg {
-            height: 2rem;
+            height: 1.5rem;
         }
         .svg__ico {
             fill: #000;
@@ -22,7 +22,7 @@
     }
 
     .label {
-        display: none;
+        font-weight: 600;
     }
 
     &.block--header {
