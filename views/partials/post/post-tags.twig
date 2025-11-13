@@ -1,9 +1,3 @@
 <div class="post__tags">
-    <ul class="tags__list{% if class %} {{ class }}{% endif %}">
-        {% for tag in tags %}
-            <li class="list__item item--tag">
-                <a href="{{ tag.link }}">#{{ tag.name }}</a>
-            </li>
-        {% endfor %}
-    </ul><!-- /tags-list -->
+	{% include 'partials/tags-list.twig' with { 'tags' : post.tags, 'cssClass' : false }  %}
 </div>

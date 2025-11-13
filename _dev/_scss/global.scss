@@ -35,9 +35,7 @@
 @use "content/section-seo";
 
 @use "partials/listing/post";
-
-@use "partials/post/posts-list";
-@use "partials/post/posts-grid";
+@use "partials/listing/tag";
 
 //include pages in bundle or load as separate files via wp_enqueue_style?
 //@use 'pages/post';

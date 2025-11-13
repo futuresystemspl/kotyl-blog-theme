@@ -1,0 +1,7 @@
+<ul class="tags__list{% if cssClass %} {{ cssClass }}{% endif %}">
+	{% for tag in tags %}
+		<li class="list__item item--tag">
+			<a href="{{ tag.link }}">#{{ tag.name }}</a>
+		</li>
+	{% endfor %}
+</ul>

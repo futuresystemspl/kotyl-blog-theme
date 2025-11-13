@@ -5,13 +5,13 @@
 
     svg {
         width: auto;
-        height: 2.5rem;
+        height: 2rem;
         vertical-align: bottom;
     }
 
     @media (max-width: variables.$breakpoint_mobile) {
         svg {
-            height: 2rem;
+            height: 1.75rem;
         }
     }
 }
