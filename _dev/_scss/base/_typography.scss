@@ -2,8 +2,7 @@
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
     font-family: "SL", sans-serif;
     font-weight: 600; //semi-bold
     color: #000;
@@ -34,8 +33,11 @@ h3 {
     font-size: 1.5em;
 }
 h4 {
-    font-size: 1.125em;
+    font-size: 0.75em;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #bbb;
 }
 
 p {

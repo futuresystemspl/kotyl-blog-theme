@@ -30,6 +30,10 @@
     &.section--no-margin {
         margin: 0;
     }
+
+    @media (max-width: variables.$breakpoint_mobile) {
+        margin: 3rem 0;
+    }
 }
 
 .section__body {
