@@ -4,6 +4,8 @@ use Timber\Timber;
 use Theme\Breadcrumbs;
 use Theme\Seo;
 
+
+
 // Initialize Timber.
 Timber::init();
 
@@ -31,6 +33,8 @@ function add_to_twig(\Twig\Environment $twig)
 function theme_global_context($context)
 {
 
+    global $theme_vars;
+
     $context['is_home'] = is_home();
     $context['is_single'] = is_single();
 
@@ -40,7 +44,9 @@ function theme_global_context($context)
     //global links
     $context['links'] = array(
         'archive' => get_permalink(THEME_ARCHIVE_PAGE_ID),
+        'store' => $theme_vars['shop_url'],
     );
+
 
     //https://timber.github.io/docs/guides/acf-cookbook/#options-page
     $context['options'] = get_fields('options');

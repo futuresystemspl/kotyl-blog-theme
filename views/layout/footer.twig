@@ -1,25 +1,33 @@
 <footer>
+	<div class="viewport viewport--laptop">
 
-	<section class="footer__section section--branding">
+		<section class="footer__section section--branding">
 
-		{% include "blocks/block-social.twig" with { 'class' : 'block--footer' } %}
 
-		{% include 'components/nav.twig' with { 'nav' : footer_nav, 'class' : 'footer__nav nav--footer' } %}
+			{% include "components/logo.twig" with { 'cssClass' : 'footer__logo' } %}
 
-	</section>
+			{% include "components/nav/nav-footer.twig" %}
 
-	<section class="footer__section section--credits">
+			{% include "blocks/block-social.twig" with { 'cssClass' : 'block--footer' } %}
 
-		<p class="footer__copyrights">2025 &copy;
-			{{ __('Wszystkie prawa zastrzeżone')}}</p>
-		<p class="footer__disclaimer">{{ __('Właścicielem zdjęć produktów jest KOTYL. Wykorzystanie i powielanie materiałów znajdujących się na stronach kotyl.eu jest zabronione. Strona korzysta z informacji przechowywanych w plikach cookies w celach funkcjonalnych oraz statystycznych.')}}</p>
+		</section>
 
-		<p class="footer__credits">
-			{{ __('Projekt i realizacja')}}:
-			<a href="//futuresystems.pl" title="{{ __('Sklepy i strony internetowe Gliwice')}}">{{ __('agencja reklamowa')}}</a>
-			<a href="//futuresystems.pl" title="{{ __('Projektowanie i wdrażanie systemów e-commerce')}}">futuresystems.pl</a>
-		</p>
+		<section class="footer__section section--credits text--center">
 
-	</section>
+
+			<p class="footer__disclaimer">{{ __('Właścicielem zdjęć produktów jest KOTYL. Wykorzystanie i powielanie materiałów znajdujących się na stronach kotyl.eu jest zabronione. Strona korzysta z informacji przechowywanych w plikach cookies w celach funkcjonalnych oraz statystycznych.')}}</p>
+
+			<p class="footer__credits">
+				{{ __('Projekt i realizacja')}}:
+				<a href="//futuresystems.pl" title="{{ __('Sklepy i strony internetowe Gliwice')}}">{{ __('agencja reklamowa')}}</a>
+				<a href="//futuresystems.pl" title="{{ __('Projektowanie i wdrażanie systemów e-commerce')}}">futuresystems.pl</a>
+			</p>
+
+		</section>
+
+
+	</div>
+	<!-- /viewport -->
+
 
 </footer>

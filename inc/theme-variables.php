@@ -8,6 +8,8 @@
  *
  */
 
+
+
 $lang = defined('ICL_LANGUAGE_CODE') ? ICL_LANGUAGE_CODE : 'pl';
 $rest_url = get_rest_url(null, 'wp/v2/');
 $theme_rest_url = get_rest_url(null, 'theme/v1/');
@@ -44,6 +46,7 @@ $i18n = array(
 $theme_vars = array(
     'base_url' => home_url(),
     'theme_url' => get_template_directory_uri(),
+    'shop_url' => '//kotyl.eu',
     'lang' => $lang,
     'rest' => $theme_endpoints,
     'i18n' => $i18n,

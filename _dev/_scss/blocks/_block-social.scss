@@ -39,4 +39,12 @@
             display: none;
         }
     }
+
+    &.block--footer {
+        .ui-ico {
+            .svg__ico {
+                fill: variables.$gold;
+            }
+        }
+    }
 }
