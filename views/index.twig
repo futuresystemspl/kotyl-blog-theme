@@ -10,46 +10,17 @@
 
 	{% include 'content/section-tags.twig' %}
 
-	<section class="content__section section-posts">
-		<div class="viewport viewport--laptop">
-			<ul class="posts__grid">
-				{% for post in posts|slice(0, 2) %}
-					{% include 'partials/post/item.twig' with { 'class' : 'grid__item item--post'} %}
-				{% endfor %}
-			</ul>
-		</div>
-		<!-- /viewport -->
-	</section>
+	{% include 'content/section-posts.twig' with { 'posts' : posts|slice(0, 2) } %}
 
 	{% include 'content/section-new-products.twig' %}
 
-	<section class="content__section section-posts">
-		<div class="viewport viewport--laptop">
-			<ul class="posts__grid grid--home">
-				{% for post in posts|slice(2, 5) %}
-					{% include 'partials/post/item.twig' with { 'class' : 'grid__item item--post'} %}
-				{% endfor %}
-			</ul>
-		</div>
-		<!-- /viewport -->
-	</section>
+	{% include 'content/section-posts.twig' with { 'posts' : posts|slice(2, 5), 'grid' : 'home'} %}
 
 	{% include 'content/section-features.twig' %}
 
-	<section class="content__section section-posts">
-		<div class="viewport viewport--laptop">
-			<ul class="posts__grid grid--alt">
-				{% for post in posts|slice(7, 7) %}
-					{% include 'partials/post/item.twig' with { 'class' : 'grid__item item--post'} %}
-				{% endfor %}
-			</ul>
-		</div>
-		<!-- /viewport -->
-	</section>
+	{% include 'content/section-posts.twig' with { 'posts' : posts|slice(7, 7), 'grid' : 'alt'} %}
 
-	{# <div class="shop-category" data-category-id="12"></div> #}
-
-
+	{% include 'content/section-instagram.twig' %}
 	{% include 'content/section-seo.twig' %}
 
 

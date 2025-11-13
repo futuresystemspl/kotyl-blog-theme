@@ -1,8 +1,8 @@
-<li class="{% if class %}{{ class }}{% else %}item--post{% endif %}">
+<li class="{% if cssClass %}{{ cssClass }}{% else %}item--post{% endif %}">
 
 	{% if post.thumbnail %}
 		<a href="{{post.link}}" class="post__cover">
-			{% include "partials/post/post-cover.twig" with { 'class' : false, 'lazy' : (lazy is defined and lazy == false ? false : true) } %}
+			{% include "partials/post/post-cover.twig" with { 'cssClass' : false, 'lazy' : (lazy is defined and lazy == false ? false : true) } %}
 		</a>
 	{% endif %}
 
