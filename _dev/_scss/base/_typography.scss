@@ -1,8 +1,7 @@
 @use "../utilities/variables";
 
 h1,
-h2,
-h3 {
+h2 {
     font-family: "SL", sans-serif;
     font-weight: 600; //semi-bold
     color: #000;
@@ -31,6 +30,8 @@ h2 {
 }
 h3 {
     font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: 1rem;
 }
 h4 {
     font-size: 0.75em;

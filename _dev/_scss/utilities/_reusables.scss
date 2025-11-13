@@ -14,6 +14,12 @@
             height: 1.75rem;
         }
     }
+
+    &.logo--gold {
+        .svg__ico {
+            fill: variables.$gold;
+        }
+    }
 }
 
 //youtube embed wrapper for 16:9 aspect ratio

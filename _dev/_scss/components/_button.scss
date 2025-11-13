@@ -42,6 +42,16 @@
             }
         }
     }
+    &.button--white {
+        background: #fff;
+        color: #000;
+        @media (hover: hover) {
+            &:hover {
+                background: #000;
+                color: #fff;
+            }
+        }
+    }
 
     @media (hover: hover) {
         &:hover {

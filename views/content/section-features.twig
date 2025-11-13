@@ -1,0 +1,49 @@
+{% set features = [
+    { 
+        'title': __('Buty zaprojektowane i wyprodukowane w Polsce.', 'theme'), 
+        'desc' : __('Jesteśmy firmą rodzinną z wieloletnim doświadczeniem. Buty produkujemy nieprzerwanie od 1991 roku.', 'theme')
+    },
+    { 
+        'title': __('Ręcznie wykonane z wysokiej jakości skóry naturalnej.', 'theme'), 
+        'desc' : __('Naturalne materiały wysokiej jakości charakteryzujące się miękkością i trwałością. Precyzyjne, ręczne wykonanie.', 'theme')
+    },
+    { 
+        'title': __('Kupujesz bezpośrednio od polskiego producenta.', 'theme'), 
+        'desc' : __('Wysokiej jakości rzemiosło jest wartością, o której powinien usłyszeć cały świat. Sprzedajemy bezpośrednio od rzemieślników i kaletników.', 'theme')
+    },
+    { 
+        'title': __('Szybka wysyłka kurierem i 14 dni na zwrot lub wymianę.', 'theme'), 
+        'desc' : __('Każdy produkt możesz zwrócić bez podania przyczyny nawet do 14 dni po zakupie.', 'theme')
+    },                    
+  ] 
+%}
+
+<section class="content__section section-features">
+	<div class="viewport viewport--laptop">
+
+		<div class="section__body text--white">
+
+			{% include "components/logo.twig" with { 'cssClass' : 'section__logo logo--gold' } %}
+
+			<div class="section__header">
+				<h4>{{ __('Dlaczego warto wybrać buty KOTYL', 'theme') }}</h4>
+				<h2>{{ __('Jesteśmy polskim producentem butów dla kobiet. Oto nasze zalety.', 'theme') }}</h2>
+			</div>
+
+			<ul class="features__list">
+				{% for feature in features %}
+					<li class="list__item item--feature">
+						<h3>{{ feature.title }}</h3>
+						<p>{{ feature.desc }}</p>
+					</li>
+				{% endfor %}
+			</ul>
+
+			<div class="section__cta">
+				<a class="button button--white" href="{{ links.store }}">{{ __('Przejdź do sklepu z butami', 'theme') }}</a>
+			</div>
+		</div>
+
+	</div>
+	<!-- /viewport -->
+</section>
