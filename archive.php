@@ -1,14 +1,5 @@
 <?php
 
-$postType = get_query_var('post_type');
-$term = get_queried_object();
-
-$context = Timber::get_context();
-
-$context['post_type'] = get_query_var('post_type');
-$context['term'] = $term;
-$context['title'] = $term->name . ' - ' . __('archiwum', 'theme');
-
 /**
  * 
  * On archive pages, we can filter posts by quering taxonomies directly via URL (both approaches work):
@@ -21,13 +12,22 @@ $context['title'] = $term->name . ' - ' . __('archiwum', 'theme');
  * 
  */
 
-echo '<pre>';
-print_r($wp_query); 
-echo '</pre>';
+use Timber\Timber;
 
-Timber::render( 
+$context = Timber::context();
+
+$postType = get_query_var('post_type');
+$term = get_queried_object();
+
+$context['post_type'] = get_query_var('post_type');
+$context['term'] = $term;
+$context['title'] = $term->name . ' - ' . __('archiwum', 'theme');
+
+
+Timber::render(
 	array(
-		'archive-' . $postType . '.twig', 
-		'archive.twig' ), 
-	$context 
+		'archive-' . $postType . '.twig',
+		'archive.twig'
+	),
+	$context
 );

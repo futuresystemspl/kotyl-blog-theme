@@ -58,6 +58,7 @@
         }
         @media (max-width: variables.$breakpoint_phone_big) {
             grid-template-columns: 1fr;
+            gap: 2rem;
         }
     }
 }
