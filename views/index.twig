@@ -10,25 +10,42 @@
 
 	{% include 'content/section-tags.twig' %}
 
-	<section class="content__section section-newest-posts">
+	<section class="content__section section-posts">
 		<div class="viewport viewport--laptop">
-
-			<ul class="posts__grid grid--big">
-				{% for post in posts %}
-
+			<ul class="posts__grid">
+				{% for post in posts|slice(0, 2) %}
 					{% include 'partials/post/item.twig' with { 'class' : 'grid__item item--post'} %}
-
 				{% endfor %}
 			</ul>
-
 		</div>
 		<!-- /viewport -->
 	</section>
 
 	{% include 'content/section-new-products.twig' %}
 
+	<section class="content__section section-posts">
+		<div class="viewport viewport--laptop">
+			<ul class="posts__grid grid--home">
+				{% for post in posts|slice(2, 5) %}
+					{% include 'partials/post/item.twig' with { 'class' : 'grid__item item--post'} %}
+				{% endfor %}
+			</ul>
+		</div>
+		<!-- /viewport -->
+	</section>
+
 	{% include 'content/section-features.twig' %}
 
+	<section class="content__section section-posts">
+		<div class="viewport viewport--laptop">
+			<ul class="posts__grid grid--alt">
+				{% for post in posts|slice(7, 7) %}
+					{% include 'partials/post/item.twig' with { 'class' : 'grid__item item--post'} %}
+				{% endfor %}
+			</ul>
+		</div>
+		<!-- /viewport -->
+	</section>
 
 	{# <div class="shop-category" data-category-id="12"></div> #}
 

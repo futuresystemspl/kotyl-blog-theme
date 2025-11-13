@@ -54,4 +54,31 @@
     @media (max-width: variables.$breakpoint_mobile) {
         grid-template-columns: 1fr;
     }
+
+    // first row: 2 big items, then 3 medium items
+    &.grid--home {
+        @media (min-width: variables.$breakpoint_mobile + 1px) {
+            grid-template-columns: repeat(6, 1fr);
+            > .grid__item {
+                grid-column: auto / span 3;
+
+                &:nth-child(n + 3) {
+                    grid-column: auto / span 2;
+                }
+            }
+        }
+    }
+    // first row: 4 small items, then 3 medium items
+    &.grid--alt {
+        @media (min-width: variables.$breakpoint_mobile + 1px) {
+            grid-template-columns: repeat(12, 1fr);
+            > .grid__item {
+                grid-column: auto / span 3;
+
+                &:nth-child(n + 5) {
+                    grid-column: auto / span 4;
+                }
+            }
+        }
+    }
 }
