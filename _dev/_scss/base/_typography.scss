@@ -6,7 +6,7 @@ h3,
 h4 {
     font-family: "SL", sans-serif;
     font-weight: 600; //semi-bold
-    color: variables.$black;
+    color: #000;
 
     &:not(.header--no-margin) {
         margin-bottom: 2rem;
@@ -14,7 +14,7 @@ h4 {
 }
 
 h1 {
-    font-size: 3.5em;
+    font-size: 4em;
 
     @media (max-width: variables.$breakpoint_mobile) {
         font-size: 3em;
@@ -24,10 +24,10 @@ h1 {
     }
 }
 h2 {
-    font-size: 2em;
+    font-size: 4em;
 
     @media (max-width: variables.$breakpoint_phone_big) {
-        font-size: 1.5em;
+        font-size: 3em;
     }
 }
 h3 {
@@ -41,4 +41,8 @@ h4 {
 p {
     line-height: 2;
     margin-bottom: 1rem;
+
+    @media (min-width: variables.$breakpoint_mobile + 1px) {
+        font-size: 1.125em;
+    }
 }

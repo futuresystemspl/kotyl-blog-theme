@@ -1,3 +1,37 @@
-.button {
+@use "../utilities/variables";
 
+.button {
+    cursor: pointer;
+
+    background: #000;
+    color: #fff;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    max-width: 20rem;
+    height: 4rem;
+
+    text-align: center;
+
+    font-family: "AG", sans-serif;
+    font-size: 1.125em;
+    font-weight: 300;
+
+    padding: 0 2rem;
+
+    border-radius: 2rem;
+
+    @media (hover: hover) {
+        &:hover {
+            background: #272727;
+            text-decoration: none;
+        }
+    }
+
+    @media (max-width: variables.$breakpoint_mobile) {
+        max-width: 100%;
+    }
 }

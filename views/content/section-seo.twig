@@ -1,0 +1,28 @@
+<section class="content__section section-seo">
+
+	<div class="viewport viewport--article">
+
+		<div class="section__header text--center">
+			{% include "components/logo.twig" with { 'cssClass' : 'section__logo' } %}
+			<h2>{{ __('Sklep internetowy z butami dla Kobiet', 'theme') }}</h2>
+		</div>
+
+		<div class="section__body">
+			<p>{{ __('KOTYL to polska firma rodzinna, która z pasją i zaangażowaniem tworzy eleganckie buty damskie od 1991 roku. Nasza marka wyróżnia się nie tylko długoletnią tradycją, ale także najwyższą jakością wykonania. Każda para butów KOTYL powstaje z myślą o kobietach, które cenią sobie styl, wygodę i trwałość. <a href="%s">Skórzane buty KOTYL</a> są synonimem luksusu i dobrego gustu, idealnie wpisując się w kanony współczesnej elegancji i mody.', 'theme')|replace({ '%s': links.store }) }}</p>
+
+			<p>{{ __('Wszystkie <a href="%s">buty damskie KOTYL</a> są wykonywane ze starannie wyselekcjonowanej, naturalnej skóry. Dzięki temu zapewniamy nie tylko wyjątkowy komfort noszenia, ale także trwałość, która pozwoli cieszyć się naszymi produktami przez długie lata. KOTYL to buty damskie, które doskonale pasują zarówno do codziennych, jak i wyjątkowych stylizacji. Niezależnie od okazji, nasze modele zawsze dodadzą szyku i klasy każdej kobiecie.', 'theme')|replace({ '%s': links.store }) }}</p>
+
+			<p>{{ __('W <a href="%s">sklepie z butami KOTYL</a> znajdziesz szeroką gamę obuwia dla kobiet, która zaspokoi potrzeby najbardziej wymagających klientek. Oferujemy czółenka na słupku, czółenka na szpilce, baleriny, botki oraz damskie sandały na obcasie. Nasze kolekcje są inspirowane najnowszymi trendami w modzie, dzięki czemu każda kobieta znajdzie u nas coś dla siebie. Szczególnie polecamy naszą kolekcję ślubną, która zachwyca subtelnym pięknem i wyjątkowym designem. Damskie <a href="%s">buty KOTYL na ślub i wesele</a> to idealny wybór na ten wyjątkowy dzień.', 'theme')|replace({ '%s': links.store }) }}</p>
+
+			<p>{{ __('KOTYL to więcej niż tylko marka – to synonim polskiej jakości i rzemieślniczej precyzji. Jako firma rodzinna, kładziemy duży nacisk na każdy etap produkcji, aby dostarczyć naszym klientkom produkty najwyższej jakości. Nasze buty są projektowane i produkowane w Polsce, co daje nam pełną kontrolę nad ich jakością. Wybierając <a href="%s">buty damskie KOTYL</a>, wspierasz polską produkcję i rzemiosło, zyskując jednocześnie eleganckie, stylowe buty, które staną się nieodłącznym elementem Twojej garderoby.', 'theme')|replace({ '%s': links.store }) }}</p>
+
+			<div class="section__cta">
+				<a class="button" href="{{ links.store }}">{{ __('Przejdź do sklepu z butami', 'theme') }}</a>
+			</div>
+
+		</div>
+
+	</div>
+	<!-- /viewport -->
+
+</section>
