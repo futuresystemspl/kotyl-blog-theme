@@ -28,7 +28,7 @@ $theme_endpoints = array(
     'base' => $rest_url,
     'theme' => $theme_rest_url,
     'posts' => $rest_url . 'posts?per_page=4',
-    'shop_api' => 'https://bravomoda.eu/module/fs_rest/',
+    'shop_api' => 'https://kotyl.eu/module/fs_rest/',
 );
 
 $i18n = array(
