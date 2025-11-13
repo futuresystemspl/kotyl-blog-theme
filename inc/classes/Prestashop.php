@@ -10,7 +10,7 @@ namespace Theme;
 class Prestashop
 {
 
-    public static $shop_api = 'https://bravomoda.eu/module/fs_rest/';
+    public static $shop_api = 'https://kotyl.eu/module/fs_rest/';
 
 
     /**
@@ -53,6 +53,22 @@ class Prestashop
             array(
                 'id' => $id_category,
                 'products' => $show_products,
+            )
+        );
+
+        $data = self::request($url . '?' . $params);
+
+        return $data;
+    }
+
+
+    public static function getCategories($id_category)
+    {
+
+        $url = self::$shop_api . 'categories';
+        $params = http_build_query(
+            array(
+                'id' => $id_category
             )
         );
 

@@ -2,6 +2,7 @@
 
 use Timber\Timber;
 use Theme\Breadcrumbs;
+use Theme\Prestashop;
 use Theme\Seo;
 
 
@@ -60,6 +61,12 @@ function theme_global_context($context)
      * @see inc/classes/Seo.php
      */
     $context['seo'] = Seo::getMetaTags();
+
+
+    /**
+     * @see inc/classes/Prestashop.php
+     */
+    $context['store_categories'] = Prestashop::getCategories(3);
 
     return $context;
 }

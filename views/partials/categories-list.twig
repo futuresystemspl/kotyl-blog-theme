@@ -1,0 +1,7 @@
+<ul class="tags__list list--categories{% if cssClass %} {{ cssClass }}{% endif %}">
+	{% for category in categories %}
+		<li class="list__item item--category">
+			<a href="{{ category.url }}">{{ category.name }}</a>
+		</li>
+	{% endfor %}
+</ul>

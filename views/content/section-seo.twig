@@ -7,6 +7,8 @@
 			<h2>{{ __('Sklep internetowy z butami dla Kobiet', 'theme') }}</h2>
 		</div>
 
+		{% include "partials/categories-list.twig" with { 'categories' : store_categories.subcategories } %}
+
 		<div class="section__body">
 			<p>{{ __('KOTYL to polska firma rodzinna, która z pasją i zaangażowaniem tworzy eleganckie buty damskie od 1991 roku. Nasza marka wyróżnia się nie tylko długoletnią tradycją, ale także najwyższą jakością wykonania. Każda para butów KOTYL powstaje z myślą o kobietach, które cenią sobie styl, wygodę i trwałość. <a href="%s">Skórzane buty KOTYL</a> są synonimem luksusu i dobrego gustu, idealnie wpisując się w kanony współczesnej elegancji i mody.', 'theme')|replace({ '%s': links.store }) }}</p>
 

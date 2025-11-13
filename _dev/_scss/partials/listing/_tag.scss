@@ -6,21 +6,46 @@
     gap: 0.5rem;
     width: 100%;
     margin: 1rem 0;
-}
 
-.item--tag {
-    a {
-        display: block;
-        font-size: 0.875em;
-        font-weight: 400;
-        padding: 0.375rem 1rem;
-        border-radius: 1.5rem;
-        background: #ebe7e7;
-        text-decoration: none;
+    &.list--categories {
+        gap: 1rem;
+        justify-content: center;
+        max-width: 40rem;
+        margin: 2rem auto;
+    }
 
-        @media (hover: hover) {
-            &:hover {
-                background: #d4d3d3;
+    .list__item {
+        a {
+            display: block;
+            font-size: 0.875em;
+            font-weight: 400;
+            padding: 0.375rem 1rem;
+            border-radius: 1.5rem;
+
+            text-decoration: none;
+        }
+        &.item--category {
+            a {
+                font-size: 1.125em;
+                font-weight: 300;
+                padding: 0.75rem 1.5rem;
+                background: #e8e8e8;
+                @media (hover: hover) {
+                    &:hover {
+                        background: #272727;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        &.item--tag {
+            a {
+                background: #ebe7e7;
+                @media (hover: hover) {
+                    &:hover {
+                        background: #d4d3d3;
+                    }
+                }
             }
         }
     }
