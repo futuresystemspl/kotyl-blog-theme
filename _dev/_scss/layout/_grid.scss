@@ -1,13 +1,12 @@
 @use "../utilities/variables";
 
-
 /**
  *  Warning: we can't use slash as a division anymore - use sass:math instead, see:
  *  https://sass-lang.com/documentation/breaking-changes/slash-div
  */
 @use "sass:math";
 
-$row : math.div(variables.$viewport_width, 12);
+$row: math.div(variables.$viewport_width, 12);
 
 .grid--viewport {
     display: grid;
@@ -30,7 +29,7 @@ $row : math.div(variables.$viewport_width, 12);
 
     @media all and (min-width: variables.$breakpoint_mobile + 1px) {
         grid-template-columns: 1fr 1fr;
-        grid-gap: 3rem;		
+        grid-gap: 1rem;
     }
 }
 
@@ -40,6 +39,6 @@ $row : math.div(variables.$viewport_width, 12);
 
     @media all and (min-width: variables.$breakpoint_mobile + 1px) {
         grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 2rem 2rem;		
-    }	
+        grid-gap: 2rem 2rem;
+    }
 }

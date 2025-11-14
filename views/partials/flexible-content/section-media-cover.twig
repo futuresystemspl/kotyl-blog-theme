@@ -1,0 +1,28 @@
+{# 
+    Section media cover WIP
+    TO DO: section title, desc, cta, option to include player for longer videos based on video component and YT API?
+ #}
+
+<section class="content__section section-media-cover {% if class %} {{ class }}{% endif %}{% if section.is_full_width %} section--full-width{% endif %}">
+
+    {% if section.image %}
+        <figure class="section__cover cover cover--image">
+            <picture>
+                    <source srcset="{{ section.image.url|towebp }}" type="image/webp">
+                    <source srcset="{{ section.image.url }}" type="image/jpeg">                    
+                    <img loading="lazy" src="{{ section.image.url }}" />
+            </picture>        
+        </figure>
+    {% endif %}
+
+
+    {% if section.video %}
+        <figure class="section__cover cover cover--video">
+            <video 
+                src="{{ section.video }}" 
+                playsinline autoplay loop muted preload="none"
+            ></video>        
+        </figure>
+    {% endif %}
+
+</section>

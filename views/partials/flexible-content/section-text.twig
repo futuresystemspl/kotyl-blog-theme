@@ -1,0 +1,30 @@
+{#	
+	ACF Flexible content dynamic section; see views/layout/content.twig
+#}
+
+<section class="content__section section-text section--no-padding">
+	<div class="viewport{% if section.layout == 1 %} viewport--article{% elseif section.layout == 2 %} viewport--laptop{% endif %}">
+
+		{% if section.layout == 1 or section.layout is empty %}
+
+			<div class="section__content text--rich">
+				{{ section.block_text|shortcodes }}
+			</div>
+			<!-- /section__body -->
+
+		{% elseif section.layout == 2 %}
+
+			<div class="section__grid grid--two-columns">
+				<div class="grid__item item--column">
+					{{ section.block_text|shortcodes }}
+				</div>
+				<div class="grid__item item--column">
+					{{ section.block_text_2|shortcodes }}
+				</div>
+			</div>
+
+		{% endif %}
+
+	</div>
+	<!-- /viewport -->
+</section>

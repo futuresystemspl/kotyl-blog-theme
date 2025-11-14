@@ -1,0 +1,18 @@
+{# 
+    configurable parameters:
+
+    @id_category (int) - for data purposes
+    @header_text (string)
+
+#}
+
+<section class="content__section section-products">
+
+	<div class="viewport">
+
+		<div class="shop-category" data-category-id="{{ section.id_category }}" {% if section.header %} data-header-text="{{ section.header }}" {% endif %} {% if section.url %} data-url="{{ section.url }}" {% endif %}></div>
+
+	</div>
+	<!-- /viewport -->
+
+</section>

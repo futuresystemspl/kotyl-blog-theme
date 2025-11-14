@@ -1,0 +1,20 @@
+{#	
+	ACF Flexible content dynamic section; see views/layout/content.twig
+#}
+
+<section class="content__section section-lookbook section--no-padding">
+	<div class="viewport viewport--laptop">
+		<div class="section__grid grid--two-columns">
+
+			<div class="grid__item item--image">
+				{% include 'partials/flexible-content/_partials/lookbook-image.twig' with { 'image' : section.image_left } %}
+			</div>
+
+			<div class="grid__item item--image">
+				{% include 'partials/flexible-content/_partials/lookbook-image.twig' with { 'image' : section.image_right } %}
+			</div>
+		</div>
+	</div>
+	<!-- /viewport -->
+
+</section>

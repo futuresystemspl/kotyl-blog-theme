@@ -233,7 +233,7 @@
                                     "name": "url",
                                     "aria-label": "",
                                     "type": "text",
-                                    "instructions": "Opcjonalny link do produktu widocznego na zdjęciu. Pełny adres URL rozpoczynający się od protokołu https:\/\/ejka.pl",
+                                    "instructions": "Opcjonalny link do produktu widocznego na zdjęciu. Pełny adres URL rozpoczynający się od protokołu https:\/\/kotyl.eu",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -242,10 +242,11 @@
                                         "id": ""
                                     },
                                     "default_value": "",
-                                    "placeholder": "https:\/\/ejka.pl",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 1,
+                                    "placeholder": "https:\/\/kotyl.eu",
                                     "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
+                                    "append": ""
                                 }
                             ]
                         },
@@ -296,7 +297,7 @@
                                     "name": "url",
                                     "aria-label": "",
                                     "type": "text",
-                                    "instructions": "Opcjonalny link do produktu widocznego na zdjęciu. Pełny adres URL rozpoczynający się od protokołu https:\/\/ejka.pl",
+                                    "instructions": "Opcjonalny link do produktu widocznego na zdjęciu. Pełny adres URL rozpoczynający się od protokołu https:\/\/kotyl.eu",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -305,10 +306,11 @@
                                         "id": ""
                                     },
                                     "default_value": "",
-                                    "placeholder": "https:\/\/ejka.pl",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 1,
+                                    "placeholder": "https:\/\/kotyl.eu",
                                     "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
+                                    "append": ""
                                 }
                             ]
                         }
@@ -340,5 +342,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "display_title": ""
+    "display_title": "",
+    "modified": 1763131237
 }

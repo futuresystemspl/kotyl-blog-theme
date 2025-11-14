@@ -5,18 +5,20 @@
 //rich-text styles wrapped in "static" mixin to reuse it as .mceContentBody editore override for dashboard, see editor.scss
 @mixin rich-text {
     h1,
-    h2 {       
-        font-size: 3em;
+    h2 {
+        font-size: 3.5em;
         max-width: 60rem;
         margin: 2rem 0;
+        text-align: center;
+
         @media all and (max-width: variables.$breakpoint_mobile) {
-            font-size: 2em;
+            font-size: 2.5em;
         }
     }
     h3 {
         font-size: 2em;
         font-weight: 500;
-        line-height: 1.5;    
+        line-height: 1.5;
 
         @media (max-width: variables.$breakpoint_mobile) {
             font-size: 1.75em;
@@ -29,10 +31,10 @@
 
     blockquote {
         color: variables.$black;
-        
+
         margin: 2rem 0;
 
-        border-left: .25rem solid blue;
+        border-left: 0.25rem solid blue;
         padding-left: 2rem;
 
         p {
@@ -46,7 +48,6 @@
                 font-size: 1.25em;
             }
         }
-
     }
 
     ul,
@@ -64,7 +65,6 @@
     }
 
     a {
-        
         &:not(.button) {
             color: variables.$black;
             text-decoration: underline;
@@ -74,9 +74,7 @@
                     color: variables.$black;
                 }
             }
-
         }
-
     }
 
     p,
@@ -96,34 +94,32 @@
             color: variables.$black;
             font-weight: 600;
         }
-
     }
 
     li {
         &:not(:last-child) {
-            margin-bottom: .5rem;
+            margin-bottom: 0.5rem;
         }
-        li,        
+        li,
         p {
             font-size: 1em;
             margin: 1rem 0;
         }
     }
-   
+
     //images
     figure {
-        
         &:not(.ui-ico) {
-            width: 100% !important; //override WordPress markup 
+            width: 100% !important; //override WordPress markup
         }
         img {
             margin-bottom: 0;
         }
         figcaption {
-            font-size: .875em;
-            color: #A3A8AC;
-            margin: .5rem 0 1rem;
-        }        
+            font-size: 0.875em;
+            color: #a3a8ac;
+            margin: 0.5rem 0 1rem;
+        }
     }
     img {
         width: 100%;
@@ -142,11 +138,10 @@
 }
 .text--white,
 .text--white * {
-    
     color: #fff;
 
     strong,
-    a {		
+    a {
         color: #fff;
-    }	
+    }
 }

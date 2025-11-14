@@ -1,0 +1,68 @@
+@use "../utilities/variables";
+
+.section-lookbook {
+    padding: 0 1rem;
+
+    .section__grid {
+        max-width: 1920px;
+        margin-left: auto;
+        margin-right: auto;
+        grid-gap: 1rem;
+
+        .item--image {
+            display: grid;
+            align-items: start;
+            justify-content: center;
+
+            picture {
+                display: block;
+                overflow: hidden;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            @media (min-width: variables.$breakpoint_laptop_big) {
+                align-items: center;
+            }
+
+            a {
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+
+                > * {
+                    grid-column: 1;
+                    grid-row: 1;
+                }
+
+                .button {
+                    position: relative;
+                    z-index: 2;
+                    margin: 0 auto;
+                    opacity: 0;
+                    transition: opacity 0.2s;
+
+                    border-radius: 2rem;
+                }
+
+                @media (hover: hover) {
+                    img {
+                        transition: transform 0.4s;
+                    }
+                    &:hover {
+                        img {
+                            transform: scale(1.05);
+                        }
+                        .button {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

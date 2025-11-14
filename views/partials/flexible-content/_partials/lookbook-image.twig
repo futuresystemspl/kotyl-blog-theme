@@ -1,0 +1,19 @@
+<figure>
+	{% if image.url %}
+		<a href="{{ image.url }}">
+		{% endif %}
+
+		<picture>
+			<source srcset="{{ image.image.url|towebp }}" type="image/webp">
+			<img loading="lazy" src="{{ image.image.url }}" alt="{{ image.image.alt }}" width="1280" height="1280"/>
+		</picture>
+
+		{% if image.url %}
+			<span class="button button--white">{{ __('Kup teraz', 'theme')}}</span>
+		</a>
+	{% endif %}
+
+	{% if image.image.caption %}
+		<figcaption>{{ image.image.caption }}</figcaption>
+	{% endif %}
+</figure>
