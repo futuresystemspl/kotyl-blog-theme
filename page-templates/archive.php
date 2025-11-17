@@ -30,7 +30,7 @@ $query_arguments = array(
     'post_type' => 'post',
     'ignore_sticky_posts' => true, //sticky posts prepends to results increasing posts number which can messed up custom pagination
     'paged' => $paged,
-    'posts_per_page' => 4,
+    'posts_per_page' => 12,
 );
 
 $context['posts'] = Timber::get_posts($query_arguments);

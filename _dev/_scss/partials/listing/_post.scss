@@ -62,10 +62,17 @@
             &.item--features {
                 grid-row-start: 2;
                 grid-column: 1 / -1 !important;
+
+                .section-features {
+                    margin: 0;
+                }
             }
             &.item--features-extra {
                 grid-row-start: 5;
                 grid-column: 1 / -1 !important;
+                .section-features {
+                    margin: 0;
+                }
             }
         }
 
