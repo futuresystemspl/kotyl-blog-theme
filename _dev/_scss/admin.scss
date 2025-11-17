@@ -1,19 +1,18 @@
-@use "./utilities/variables";
+@use "utilities/variables";
 
 //  1. Login overrides
 body.login {
-    background: black;
+    background: variables.$green;
 }
 
 .login {
     h1 {
         a {
-            background-image: url('../svg/logo.svg');
+            background-image: url("../svg/logo-gold.svg");
             background-size: contain;
             display: block;
             width: auto;
-            height: 3rem;
-            
+            height: 2rem;
         }
         margin-bottom: 2rem;
     }
@@ -22,54 +21,55 @@ body.login {
         background: #dbdbdb;
         padding: 32px 24px;
         -webkit-box-shadow: none;
-                box-shadow: none;        
+        box-shadow: none;
     }
 }
 
 #login {
     width: 100%;
-    max-width: 400px;    
+    max-width: 400px;
 }
 #loginform {
     label {
-
     }
     input {
-        &[type='submit'] {
+        &[type="submit"] {
             height: auto;
             border: 0;
             font-weight: bold;
-            background-color: red;
-            color: variables.$black;
-            padding: .5rem 2rem;
-            border-radius: 1.5rem;
+            background-color: #000;
+            color: #fff;
+            padding: 0.5rem 2rem;
+            border-radius: 2rem;
             text-transform: none;
             box-shadow: none;
-            text-shadow: none;  
-            letter-spacing: normal;       
+            text-shadow: none;
+            letter-spacing: normal;
         }
-        &:not([type='submit']) {
+        &:not([type="submit"]) {
             &:focus {
                 border-color: transparent;
-                box-shadow: 0;                
+                box-shadow: 0;
             }
         }
     }
 }
 
-#user_login, #user_pass {
+#user_login,
+#user_pass {
     background-color: white;
     background-position: 95% 50%;
     background-repeat: no-repeat;
 }
 
-.login #backtoblog a, .login #nav a {
-    color: #fff;
+.login #backtoblog a,
+.login #nav a {
+    color: #6c7251;
 }
 #nav a:hover,
 #backtoblog a:hover {
     text-decoration: underline;
-    color: red !important;
+    color: #fff !important;
 }
 
 .acf-postbox {
