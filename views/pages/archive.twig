@@ -50,9 +50,8 @@
 
 	</main>
 
-	<aside
-		class="side__content">
-		{# {% include 'content/section-nav.twig' with { 'show_archive' : false } %} #}
+	<aside class="side__content">
+		{% include 'content/section-nav.twig' with { 'show_home' : true, 'show_archive' : false } %}
 		{% include 'content/section-instagram.twig' %}
 		{% include 'content/section-seo.twig' %}
 	</aside>

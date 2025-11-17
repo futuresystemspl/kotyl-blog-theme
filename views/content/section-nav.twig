@@ -1,0 +1,31 @@
+<section class="content__section section-nav{% if class %} {{ class }}{% endif %}">
+	<div class="viewport">
+		<nav>
+			<ul class="nav__list">
+
+				{% if show_home == true %}
+					<li class="list__item item--nav">
+						<a class="button button--compact button--transparent" href="{{ site.url }}">{{ __('Strona główna', 'theme') }}</a>
+					</li>
+				{% endif %}
+
+				{% if show_archive is not defined or show_archive != false %}
+					<li class="list__item item--nav">
+						<a class="button button--compact button--transparent" href="{{ links.archive }}">{{ __('Archiwum artykułów', 'theme') }}</a>
+					</li>
+				{% endif %}
+
+				{% if show_tags is not defined or show_tags != false %}
+					<li class="list__item item--nav">
+						<a class="button button--compact button--transparent" href="{{ links.tags }}">{{ __('Popularne tematy', 'theme') }}</a>
+					</li>
+				{% endif %}
+
+				<li class="list__item item--nav">
+					<a class="button button--compact" href="{{ links.store }}">{{ __('Przejdź do sklepu z butami', 'theme') }}</a>
+				</li>
+
+			</ul>
+		</nav>
+	</div>
+</section>

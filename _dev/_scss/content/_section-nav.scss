@@ -1,0 +1,56 @@
+@use "../utilities/variables";
+
+.section-nav {
+    .nav__list {
+        display: flex;
+        justify-content: center;
+    }
+
+    @media all and (max-width: variables.$breakpoint_mobile) {
+        margin: 2rem 0;
+    }
+
+    @media all and (min-width: variables.$breakpoint_mobile + 1px) {
+        .nav__list {
+            .list__item {
+                &:not(:last-child) {
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+
+    @media all and (max-width: variables.$breakpoint_hd) and (min-width: variables.$breakpoint_mobile + 1px) {
+        .button {
+            min-width: 0;
+        }
+    }
+    @media all and (max-width: variables.$breakpoint_mobile) {
+        .nav__list {
+            display: grid;
+            grid-gap: 0.5rem;
+            grid-auto-flow: column;
+            grid-auto-columns: 1fr;
+        }
+
+        .button {
+            min-width: 0;
+        }
+    }
+
+    @media all and (max-width: 650px) {
+        .nav__list {
+            grid-auto-flow: row;
+            grid-row-gap: 0.5rem;
+        }
+        .button {
+            max-width: 100%;
+        }
+    }
+
+    &.nav--center {
+        .nav__list {
+            justify-content: center;
+        }
+    }
+}

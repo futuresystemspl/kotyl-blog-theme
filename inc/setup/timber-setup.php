@@ -45,9 +45,9 @@ function theme_global_context($context)
     //global links
     $context['links'] = array(
         'archive' => get_permalink(THEME_ARCHIVE_PAGE_ID),
+        'tags' => get_permalink(THEME_TERMS_PAGE_ID),
         'store' => $theme_vars['shop_url'],
     );
-
 
     //https://timber.github.io/docs/guides/acf-cookbook/#options-page
     $context['options'] = get_fields('options');
