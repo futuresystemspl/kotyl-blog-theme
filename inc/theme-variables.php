@@ -14,9 +14,9 @@ $lang = defined('ICL_LANGUAGE_CODE') ? ICL_LANGUAGE_CODE : 'pl';
 $rest_url = get_rest_url(null, 'wp/v2/');
 $theme_rest_url = get_rest_url(null, 'theme/v1/');
 
-define('THEME_ARCHIVE_PAGE_ID', 0);
+define('THEME_ARCHIVE_PAGE_ID', 18);
 define('THEME_CONTACT_PAGE_ID', 0);
-define('THEME_TERMS_PAGE_ID', 0);
+define('THEME_TERMS_PAGE_ID', 20);
 define('THEME_PRIVACY_PAGE_ID', 0);
 
 // variables for js

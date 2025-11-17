@@ -7,7 +7,6 @@
 
 	<main class="main__content content--archive">
 
-		{% include "components/breadcrumbs.twig" %}
 
 		<section class="content__section section-title">
 			<div class="viewport">
@@ -20,7 +19,10 @@
 		{% include 'content/section-tags.twig' %}
 
 		<section class="content__section section--no-margin section-posts">
-			<div class="viewport">
+
+			{% include "components/breadcrumbs.twig" %}
+
+			<div class="viewport viewport--laptop">
 
 				<ul class="posts__grid grid--archive">
 					{% for post in posts %}
@@ -29,8 +31,13 @@
 
 					{# embed extra content to post grid #}
 					{% if posts|length > 3 %}
-						<li
-							class="grid__item item--banner">{# {% include 'content/section-banner.twig' %} #}
+						<li class="grid__item item--new-products">
+							{% include 'content/section-new-products.twig' %}
+						</li>
+					{% endif %}
+					{% if posts|length > 9 %}
+						<li class="grid__item item--features-extra">
+							{% include 'content/section-features.twig' %}
 						</li>
 					{% endif %}
 
@@ -43,8 +50,11 @@
 
 	</main>
 
-	<aside class="side__content">{# {% include 'content/section-nav.twig' with { 'show_archive' : false } %} #}
-		{# {% include 'content/section-seo.twig' %} #}
+	<aside
+		class="side__content">
+		{# {% include 'content/section-nav.twig' with { 'show_archive' : false } %} #}
+		{% include 'content/section-instagram.twig' %}
+		{% include 'content/section-seo.twig' %}
 	</aside>
 
 {% endblock %}

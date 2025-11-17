@@ -1,5 +1,8 @@
 <?php
 
+use Timber\Timber;
+use Theme\Tag;
+
 /**
  * Template Name: Archiwum
  * Description: A custom template for Archive subpage
@@ -14,11 +17,11 @@
 
 global $paged;
 
-if (!isset($paged) || !$paged){
+if (!isset($paged) || !$paged) {
     $paged = 1;
 }
 
-$context = Timber::get_context();
+$context = Timber::context();
 
 /**
  * Custom query with pagination: https://timber.github.io/docs/guides/pagination/#what-if-im-not-using-the-default-query
@@ -27,13 +30,14 @@ $query_arguments = array(
     'post_type' => 'post',
     'ignore_sticky_posts' => true, //sticky posts prepends to results increasing posts number which can messed up custom pagination
     'paged' => $paged,
-    'posts_per_page' => 20,
+    'posts_per_page' => 12,
 );
 
-$context['posts'] = new Timber\PostQuery($query_arguments);
+$context['posts'] = Timber::get_posts($query_arguments);
 $context['title'] = __('Archiwum wpisów', 'theme');
+$context['popular_tags'] = Tag::getPopularTags();
 
-Timber::render( 
-    array( 'archive.twig' ), 
-    $context 
+Timber::render(
+    array('pages/archive.twig'),
+    $context
 );

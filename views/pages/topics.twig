@@ -4,7 +4,6 @@
 
 	<main class="main__content content--tags">
 
-		{% include "components/breadcrumbs.twig" %}
 
 		<section class="content__section section-title">
 			<div class="viewport">
@@ -16,7 +15,10 @@
 		</section>
 
 		<section class="content__section section-topics">
-			<div class="viewport viewport--desktop">
+
+			{% include "components/breadcrumbs.twig" %}
+
+			<div class="viewport viewport--laptop">
 				<ul class="tags__list list--archive">
 					{% for tag in tags %}
 						<li class="list__item item--tag">
@@ -29,15 +31,12 @@
 
 	</main>
 
-	<aside class="side__content">
+	<aside
+		class="side__content">
 		{# {% include 'content/section-nav.twig' with { 'show_tags' : false } %} #}
+		{% include 'content/section-instagram.twig' %}
 		{% include 'content/section-seo.twig' %}
 	</aside>
 
 
 {% endblock %}
-
-
-
-
-

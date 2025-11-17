@@ -49,4 +49,32 @@
             }
         }
     }
+
+    &.list--archive {
+        display: block;
+
+        @media (min-width: variables.$breakpoint_mobile + 1px) {
+            column-count: 2;
+        }
+
+        .list__item {
+            a {
+                font-size: 3em;
+                background: transparent;
+                padding: 0;
+                border-radius: 0;
+
+                @media (hover: hover) {
+                    &:hover {
+                        text-decoration: underline;
+                        background: inherit;
+                    }
+                }
+
+                @media (max-width: variables.$breakpoint_mobile) {
+                    font-size: 2em;
+                }
+            }
+        }
+    }
 }
