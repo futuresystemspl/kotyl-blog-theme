@@ -1,1 +1,1 @@
-.content--post .post__title{text-align:center}.content--post .post__tags .tags__list{justify-content:center}/*# sourceMappingURL=single-post.css.map */
+.content--post .post__title{text-align:center;margin-top:4rem}@media(max-width: 960px){.content--post .post__title{margin-top:3rem}}.content--post .post__tags .tags__list{justify-content:center}/*# sourceMappingURL=single-post.css.map */

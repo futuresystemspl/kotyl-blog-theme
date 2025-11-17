@@ -3,6 +3,11 @@
 .content--post {
     .post__title {
         text-align: center;
+        margin-top: 4rem;
+
+        @media (max-width: variables.$breakpoint_mobile) {
+            margin-top: 3rem;
+        }
     }
     .post__tags {
         .tags__list {
