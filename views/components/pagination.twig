@@ -11,47 +11,63 @@
        
 #}
 
+{# {{dump(posts.pagination)}} #}
+
 {% if posts.pagination.pages %}
-    <div class="pagination">
+	<div class="pagination">
 
-        <ul class="pages__list">
-            {% for page in posts.pagination.pages %}
-                <li class="list__item item--page{% if page.link is empty %} item--current{% endif %}">
-                    {% if page.link %}
-                        <a href="{{page.link}}" title="{{ __('Strona', 'theme') }} {{ page.title }}">
-                            <span class="label">{{ page.title }}</span>
-                        </a>
-                    {% else %}
-                        <span class="label">{{page.title}}</span>
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
+		{% if posts.pagination.next %}
+			<a href="{{posts.pagination.next.link}}" class="button button--compact button--next">
+				<span class="label">{{ __('Załaduj następną stronę', 'theme') }}</span>
+			</a>
+		{% endif %}
 
-        <nav class="pagination__nav">
-            {% if posts.pagination.prev %}
-                <a href="{{posts.pagination.prev.link}}" class="nav__item item--prev">              
-                    <span class="label">&laquo; {{ __('Poprzednia strona', 'theme') }}</span>
-                    <small>{{ __('Nowsze wpisy', 'theme') }}</small>                   
-                </a>
-            {% else %}
-                <div class="nav__item item--prev item--disabled">                 
-                    <span class="label">&laquo; {{ __('Poprzednia strona', 'theme') }}</span>
-                    <small>{{ __('Nowsze wpisy', 'theme') }}</small>             
-                </div>
-            {% endif %}
+		{% if posts.pagination.current == posts.pagination.total %}
+			<a href="{{posts.pagination.pages[0].link}}" class="button button--compact button--secondary">
+				<span class="label">{{ __('Wróć do pierwszej strony', 'theme') }}</span>
+			</a>
+		{% endif %}
 
-            {% if posts.pagination.next %}
-                <a href="{{posts.pagination.next.link}}" class="nav__item item--next">
-                    <span class="label">{{ __('Następna strona', 'theme') }} &raquo;</span>
-                    <small>{{ __('Starsze wpisy', 'theme') }}</small>
-                </a>
-            {% else %}
-                <div class="nav__item item--next item--disabled">
-                    <span class="label">{{ __('Następna strona', 'theme') }} &raquo;</span>
-                    <small>{{ __('Starsze wpisy', 'theme') }}</small>
-                </div>
-            {% endif %}
-        </nav>
-    </div>
+		<nav class="pagination__nav">
+			{% if posts.pagination.prev %}
+				<a href="{{posts.pagination.prev.link}}" class="nav__item item--prev">
+					{% include "components/ui-ico.twig" with { 'ico' : 'control', 'embed' : false } %}
+					<span class="label">{{ __('Poprzednia strona', 'theme') }}</span>
+				</a>
+			{% else %}
+				<div class="nav__item item--prev item--disabled">
+					{% include "components/ui-ico.twig" with { 'ico' : 'control', 'embed' : false } %}
+					<span class="label">{{ __('Poprzednia strona', 'theme') }}</span>
+				</div>
+			{% endif %}
+
+
+			<ul class="pages__list">
+				{% for page in posts.pagination.pages %}
+					<li class="list__item item--page{% if page.link is empty %} item--current{% endif %}">
+						{% if page.link %}
+							<a href="{{page.link}}" title="{{ __('Strona', 'theme') }} {{ page.title }}">
+								<span class="label">{{ page.title }}</span>
+							</a>
+						{% else %}
+							<span class="label">{{page.title}}</span>
+						{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+
+
+			{% if posts.pagination.next %}
+				<a href="{{posts.pagination.next.link}}" class="nav__item item--next">
+					<span class="label">{{ __('Następna strona', 'theme') }}</span>
+					{% include "components/ui-ico.twig" with { 'ico' : 'control', 'embed' : false } %}
+				</a>
+			{% else %}
+				<div class="nav__item item--next item--disabled">
+					<span class="label">{{ __('Następna strona', 'theme') }}</span>
+					{% include "components/ui-ico.twig" with { 'ico' : 'control', 'embed' : false } %}
+				</div>
+			{% endif %}
+		</nav>
+	</div>
 {% endif %}

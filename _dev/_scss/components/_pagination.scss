@@ -5,39 +5,93 @@
  * Notice: comments pagination use default WordPress markup, styles located in components/comments.scss
  */
 .pagination {
+    max-width: 30rem;
+    margin: 2rem auto;
+
+    .button {
+        height: 2.5rem;
+        border-radius: 0;
+        padding: 0;
+        max-width: 100%;
+        font-size: 0.875em;
+        margin-bottom: 2rem;
+    }
+
     .pages__list {
-        display: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 0.25rem;
+
+        .item--page {
+            display: flex;
+            align-items: center;
+
+            font-size: 0.875em;
+            font-weight: 400;
+
+            a {
+                color: #cbcbcb;
+                text-decoration: none;
+
+                @media (hover: hover) {
+                    &:hover {
+                        color: #000;
+                    }
+                }
+            }
+
+            &.item--current {
+                color: #000;
+            }
+
+            &:not(:last-child) {
+                &::after {
+                    content: "\00B7";
+                    margin: 0 0.25rem;
+                    font-weight: 400;
+                    color: variables.$text_silver;
+                }
+            }
+        }
+
+        @media (max-width: variables.$breakpoint_mobile) {
+            display: none;
+        }
     }
 
     .pagination__nav {
         display: flex;
-        gap: .5rem;
+        justify-content: space-between;
 
         .nav__item {
-            flex-basis: 100%;
+            font-size: 0.875em;
 
-            > * {
-                display: block;
-            }
-            small {
-                font-weight: 400;
-                font-size: .875em;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+
+            .ui-ico {
+                height: 0.875rem;
+                margin: 0;
             }
 
+            a {
+                color: #000;
+            }
+
+            &.item--prev {
+                .ui-ico {
+                    transform: rotate(-180deg);
+                }
+            }
             &.item--disabled {
-                display: none;
+                color: #e2e2e2;
+                .ui-ico {
+                    opacity: 0.1;
+                }
             }
-        }
-
-        a {
-            display: block;
-            background: variables.$silver;
-            color: #636363;
-            font-weight: 600;
-            font-size: 1em;
-            padding: 1rem;
-            text-align: center;
         }
     }
-
 }
