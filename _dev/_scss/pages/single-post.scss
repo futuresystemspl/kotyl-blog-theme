@@ -9,6 +9,17 @@
             margin-top: 3rem;
         }
     }
+    .post__excerpt {
+        font-size: 1.75em;
+        color: #000;
+        font-weight: 400;
+
+        //text-align: center;
+
+        @media (max-width: variables.$breakpoint_mobile) {
+            font-size: 1.375em;
+        }
+    }
     .post__tags {
         .tags__list {
             justify-content: center;
