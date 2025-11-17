@@ -10,6 +10,10 @@
     padding-left: variables.$viewport-padding;
     padding-right: variables.$viewport-padding;
 
+    .viewport {
+        padding: 0;
+    }
+
     &.viewport--article {
         max-width: 960px;
     }

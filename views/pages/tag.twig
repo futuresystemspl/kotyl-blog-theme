@@ -4,7 +4,6 @@
 
 	<main class="content__main content--tag">
 
-		{% include "components/breadcrumbs.twig" %}
 
 		<section class="content__title text--center">
 			<h4>{{ __('Temat', 'theme') }}</h4>
@@ -18,9 +17,13 @@
 
 		</section>
 
+
 		<section class="content__section section-posts">
 
-			<div class="viewport">
+			<div class="viewport viewport--laptop">
+
+				{% include "components/breadcrumbs.twig" %}
+
 				<ul class="posts__grid grid--archive">
 					{% for post in posts %}
 						{% include 'partials/post/item.twig' with { 'class' : 'grid__item item--post'} %}
@@ -32,9 +35,11 @@
 								{% include 'content/section-shop-category.twig' with { 'layout' : 'compact', 'id_category' : tag.shop_category.id_shop_category, 'header_text' : tag.shop_category.header ? tag.shop_category.header : false } %}
 							</li>
 						{% else %}
-							<li
-								class="grid__item item--banner">{# {% include 'content/section-banner.twig' %} #}
-							</li>
+							{% if posts|length > 3 %}
+								<li class="grid__item item--features">
+									{% include 'content/section-features.twig' %}
+								</li>
+							{% endif %}
 						{% endif %}
 					{% endif %}
 
@@ -47,8 +52,11 @@
 
 	</main>
 
-	<aside class="side__content">{# {% include 'content/section-nav.twig' with { 'show_archive' : false } %} #}
-		{# {% include 'content/section-seo.twig' %} #}
+	<aside
+		class="side__content">
+		{# {% include 'content/section-nav.twig' with { 'show_archive' : false } %} #}
+		{% include 'content/section-instagram.twig' %}
+		{% include 'content/section-seo.twig' %}
 	</aside>
 
 {% endblock %}

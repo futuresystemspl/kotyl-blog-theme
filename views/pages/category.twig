@@ -4,8 +4,6 @@
 
 	<main class="content__main content--category">
 
-		{% include "components/breadcrumbs.twig" %}
-
 		<section class="content__title text--center">
 			<h4>{{ __('Kategoria', 'theme') }}</h4>
 			<h1>{{ category.name }}</h1>
@@ -13,15 +11,17 @@
 
 		<section class="content__section section-posts">
 
-			<div class="viewport">
+			{% include "components/breadcrumbs.twig" %}
+
+			<div class="viewport viewport--laptop">
 				<ul class="posts__grid grid--archive">
 					{% for post in posts %}
 						{% include 'partials/post/item.twig' with { 'class' : 'grid__item item--post'} %}
 					{% endfor %}
 
 					{% if posts|length > 3 %}
-						<li
-							class="grid__item item--banner">{# {% include 'content/section-banner.twig' %} #}
+						<li class="grid__item item--new-products">
+							{% include 'content/section-new-products.twig' %}
 						</li>
 					{% endif %}
 
@@ -33,8 +33,11 @@
 		</section>
 	</main>
 
-	<aside class="side__content">{# {% include 'content/section-nav.twig' with { 'show_archive' : false } %} #}
-		{# {% include 'content/section-seo.twig' %} #}
+	<aside
+		class="side__content">
+		{# {% include 'content/section-nav.twig' with { 'show_archive' : false } %} #}
+		{% include 'content/section-instagram.twig' %}
+		{% include 'content/section-seo.twig' %}
 	</aside>
 
 {% endblock %}

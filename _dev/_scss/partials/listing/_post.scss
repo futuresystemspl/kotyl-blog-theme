@@ -55,6 +55,23 @@
         grid-template-columns: 1fr;
     }
 
+    &.grid--archive {
+        > .grid__item {
+            &.item--new-products,
+            &.item--features {
+                grid-row-start: 2;
+                grid-column: 1 / -1 !important;
+            }
+        }
+
+        @media (min-width: variables.$breakpoint_mobile + 1px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (min-width: variables.$breakpoint_desktop + 1px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
     // first row: 2 big items, then 3 medium items
     &.grid--home {
         @media (min-width: variables.$breakpoint_mobile + 1px) {

@@ -1,19 +1,17 @@
 @use "../utilities/variables";
 
 .breadcrumbs {
-
     @media all and (max-width: variables.$breakpoint_mobile) {
         display: none;
     }
     color: #999;
-    margin-bottom: 2rem;
+    margin: 1rem 0;
 }
 .breadcrumbs__list {
     li {
-
         display: inline-block;
-        font-size: .875em;
-        
+        font-size: 0.75em;
+
         a {
             display: inline-block;
             color: #999;
@@ -21,18 +19,18 @@
                 display: none;
             }
         }
- 
+
         &:not(:last-child) {
             &:after {
-                content: '/';
+                content: "/";
                 display: inline-block;
-                margin: 0 .5rem;
-                color: variables.$text_silver;            
+                margin: 0 0.25rem;
+                color: variables.$text_silver;
             }
         }
 
         &.item--start {
-            margin-right: .5rem;
+            margin-right: 0.25rem;
             &:after {
                 display: none;
             }
@@ -40,14 +38,11 @@
 
         &:last-child {
             a {
-                
                 pointer-events: none;
                 &:after {
-                display: none;
+                    display: none;
                 }
             }
         }
- 
- 
     }
 }
