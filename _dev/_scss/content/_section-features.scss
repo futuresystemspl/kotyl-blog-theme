@@ -1,6 +1,8 @@
 @use "../utilities/variables";
 
 .section-features {
+    margin: 1rem 0;
+
     .section__body {
         background: variables.$green;
 
