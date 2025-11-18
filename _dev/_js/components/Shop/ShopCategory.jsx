@@ -12,13 +12,13 @@ class ShopCategory extends React.Component {
         if (data.products.length == 0) return null;
 
         return (
-            <div className="section__grid">
+            <>
                 {this.props.showHeader != false && (
                     <div className="section__header text--center">
                         <h4>{wp_core.i18n.title_products}</h4>
-                        <h2>
+                        <h3>
                             <a href={categoryUrl}>{headerText ? <span>{headerText}</span> : <span>{data.name}</span>}</a>
-                        </h2>
+                        </h3>
                     </div>
                 )}
 
@@ -31,7 +31,7 @@ class ShopCategory extends React.Component {
                 <div className="section__body">
                     <ProductsList />
                 </div>
-            </div>
+            </>
         );
     }
 }

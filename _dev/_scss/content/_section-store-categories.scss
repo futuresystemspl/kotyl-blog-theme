@@ -1,0 +1,44 @@
+@use "../utilities/variables";
+
+.section-store-categories {
+    margin: 2rem 0;
+    .section__header {
+        h2 {
+            font-size: 3.5em;
+        }
+    }
+
+    .section__body {
+        padding: 4rem;
+        background: #272727;
+    }
+
+    //overrides tags__list
+
+    .tags__list {
+        .list__item {
+            &.item--category {
+                @media (hover: hover) {
+                    &:hover {
+                        a {
+                            background: #fff;
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: variables.$breakpoint_mobile) {
+        margin: 0.5rem 0;
+        .section__header {
+            h2 {
+                font-size: 2.5em;
+            }
+        }
+        .section__body {
+            padding: 3rem 1rem;
+        }
+    }
+}

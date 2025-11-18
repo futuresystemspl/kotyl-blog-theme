@@ -12,6 +12,9 @@
         justify-content: center;
         max-width: 40rem;
         margin: 2rem auto;
+        @media (max-width: variables.$breakpoint_mobile) {
+            gap: 0.5rem;
+        }
     }
 
     .list__item {
@@ -35,6 +38,10 @@
                         background: #272727;
                         color: #fff;
                     }
+                }
+                @media (max-width: variables.$breakpoint_mobile) {
+                    font-size: 1em;
+                    padding: 0.5rem 1.25rem;
                 }
             }
         }

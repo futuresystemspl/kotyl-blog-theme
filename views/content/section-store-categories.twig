@@ -1,0 +1,16 @@
+<section class="content__section section-store-categories">
+	<div class="viewport viewport--article">
+
+		<div class="section__body">
+
+			<div class="section__header text--center text--white">
+				{% include "components/logo.twig" with { 'cssClass' : 'section__logo logo--gold' } %}
+				<h2>{{ __('Sklep internetowy z butami dla Kobiet', 'theme') }}</h2>
+			</div>
+
+			{% include "partials/categories-list.twig" with { 'categories' : store_categories.subcategories } %}
+
+		</div>
+
+	</div>
+</section>

@@ -27,6 +27,15 @@
                 text-decoration: none;
             }
         }
+        h3 {
+            font-family: "SL", sans-serif;
+            font-size: 3rem;
+            color: #000;
+
+            @media (max-width: variables.$breakpoint_mobile) {
+                font-size: 2.5em;
+            }
+        }
         p {
             margin: 1rem 0;
         }
