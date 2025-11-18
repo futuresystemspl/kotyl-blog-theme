@@ -24,10 +24,6 @@
                 height: auto;
             }
 
-            @media (min-width: variables.$breakpoint_laptop_big) {
-                align-items: center;
-            }
-
             a {
                 display: grid;
                 align-items: center;

@@ -92,8 +92,6 @@ function theme_render_flexible_content($field)
     if (file_exists($layout_file_path)) {
 
         include $layout_file_path;
-
-        return true;
     } elseif (file_exists($layout_file_template_path)) {
         return Timber::compile('views/partials/flexible-content/' . $layout . '.twig', $context);
     }

@@ -16,12 +16,12 @@
         }
     }
     h3 {
-        font-size: 2em;
+        font-size: 1.75em;
         font-weight: 500;
         line-height: 1.5;
 
         @media (max-width: variables.$breakpoint_mobile) {
-            font-size: 1.75em;
+            font-size: 1.5em;
 
             &:not(.header--no-margin) {
                 margin-bottom: 1rem;
