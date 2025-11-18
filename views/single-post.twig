@@ -17,6 +17,7 @@
 
 	<aside class="side__content">
 		{% include 'content/section-store-categories.twig' %}
+		{% include 'content/section-related-posts.twig' with { 'posts' : related_posts, 'grid' : 'related-posts' } %}
 		{% include 'content/section-instagram.twig' %}
 	</aside>
 

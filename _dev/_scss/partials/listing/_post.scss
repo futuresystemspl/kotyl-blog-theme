@@ -118,4 +118,14 @@
             }
         }
     }
+
+    &.grid--related-posts {
+        @media (min-width: variables.$breakpoint_mobile + 1px) {
+            grid-template-columns: 1fr 1fr 1fr;
+
+            .post__title {
+                font-size: 1.25em;
+            }
+        }
+    }
 }

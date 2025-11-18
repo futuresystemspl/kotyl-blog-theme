@@ -10,15 +10,15 @@
 
 	{% include 'content/section-tags.twig' %}
 
-	{% include 'content/section-posts.twig' with { 'posts' : posts|slice(0, 2) } %}
+	{% include 'content/section-posts.twig' with { 'posts' : posts|slice(0, 2), 'cssClass' : 'section--no-margin' } %}
 
 	{% include 'content/section-new-products.twig' %}
 
-	{% include 'content/section-posts.twig' with { 'posts' : posts|slice(2, 5), 'grid' : 'home'} %}
+	{% include 'content/section-posts.twig' with { 'posts' : posts|slice(2, 5), 'grid' : 'home', 'cssClass' : 'section--no-margin'} %}
 
 	{% include 'content/section-features.twig' %}
 
-	{% include 'content/section-posts.twig' with { 'posts' : posts|slice(7, 7), 'grid' : 'alt'} %}
+	{% include 'content/section-posts.twig' with { 'posts' : posts|slice(7, 7), 'grid' : 'alt', 'cssClass' : 'section--no-margin'} %}
 
 	{% include 'content/section-nav.twig' %}
 

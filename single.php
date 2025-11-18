@@ -1,9 +1,13 @@
 <?php
 
 use Timber\Timber;
+use Theme\Post;
 
 $context = Timber::context();
-//$context['post'] =  Timber::get_post();
+
+
+
+$context['related_posts'] = Post::getNewestPosts($post->ID);
 
 Timber::render(
     array(

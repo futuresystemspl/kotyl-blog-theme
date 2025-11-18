@@ -1,9 +1,12 @@
-<section class="content__section section-posts section--no-margin">
-	<div class="viewport viewport--laptop">
-		<ul class="posts__grid {% if grid is defined %}grid--{{ grid }}{% endif %}">
-			{% for post in posts %}
-				{% include 'partials/post/item.twig' with { 'cssClass' : 'grid__item item--post'} %}
-			{% endfor %}
-		</ul>
+<section class="content__section section-posts{% if cssClass %} {{ cssClass }}{% endif %}">
+	<div class="viewport viewport--laptop"> {% block section_header %}{% endblock %}
+
+		{% block section_body %}
+			<ul class="posts__grid {% if grid is defined %}grid--{{ grid }}{% endif %}">
+				{% for post in posts %}
+					{% include 'partials/post/item.twig' with { 'cssClass' : 'grid__item item--post'} %}
+				{% endfor %}
+			</ul>
+		{% endblock %}
 	</div>
 </section>
