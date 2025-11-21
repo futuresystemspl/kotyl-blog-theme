@@ -5,7 +5,8 @@ $sticky_offset: 1rem; //offset for sticky elements (ui-filters on category and m
 
 //paths to assets - keep in mind that CSS will be inlined, so absolute paths are required. For some reason I couldn't get to work relative path with meta base href tag.
 $assetsPath: "//";
-$fontsPath: "//kotyl.blog.dev.test/wp-content/themes/kotyl/assets/fonts/";
+//$fontsPath: "//kotyl.blog.dev.test/wp-content/themes/kotyl/assets/fonts/";
+$fontsPath: "//kotyl.eu/blog/wp-content/themes/kotyl/assets/fonts/";
 
 //colors
 $black: #272727;
