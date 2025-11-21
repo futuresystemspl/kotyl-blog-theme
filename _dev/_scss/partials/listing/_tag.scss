@@ -61,7 +61,10 @@
         display: block;
 
         @media (min-width: variables.$breakpoint_mobile + 1px) {
-            column-count: 2;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem 3rem;
         }
 
         .list__item {

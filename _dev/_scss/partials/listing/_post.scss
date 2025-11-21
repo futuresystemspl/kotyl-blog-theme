@@ -32,6 +32,16 @@
         margin: 0;
     }
 
+    //overrides partials/listing/_tag.scss
+    .tags__list {
+        .list__item {
+            a {
+                font-size: 0.75em;
+                padding: 0.25rem 0.75rem;
+            }
+        }
+    }
+
     .post__cta {
         display: none;
     }
@@ -111,9 +121,16 @@
                 .post__title {
                     font-size: 1.25em;
                 }
+                p {
+                    font-size: 0.875em;
+                }
 
                 &:nth-child(n + 5) {
                     grid-column: auto / span 4;
+
+                    p {
+                        font-size: 1em;
+                    }
                 }
             }
         }
